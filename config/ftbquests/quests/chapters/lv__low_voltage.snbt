@@ -84,7 +84,7 @@
 			id: "258922881D3BAB94"
 			linked_quest: "1F7AAF65CC0A4ADF"
 			shape: "heart"
-			x: -1.0d
+			x: 0.0d
 			y: -6.0d
 		}
 		{
@@ -200,7 +200,7 @@
 				type: "item"
 			}]
 			title: "{quests.low_voltage.lv_steam_turbine.title}"
-			x: 0.0d
+			x: 1.0d
 			y: -6.0d
 		}
 		{
@@ -1393,6 +1393,38 @@
 			y: 5.5d
 		}
 		{
+			dependencies: ["7FA1525D681C4B4A"]
+			description: ["{quests.steam_age.alternator.desc.1}"]
+			icon: "createaddition:alternator"
+			id: "2DC24661CAD557B0"
+			optional: true
+			subtitle: "{quests.steam_age.alternator.subtitle}"
+			tasks: [
+				{
+					id: "5367AD306EAB07E2"
+					item: "createaddition:alternator"
+					type: "item"
+				}
+				{
+					id: "040F5FC6058411EE"
+					item: {
+						Count: 1
+						id: "ftbfiltersystem:smart_filter"
+						tag: {
+							display: {
+								Name: "{\"text\":\"LV Converter\"}"
+							}
+							"ftbfiltersystem:filter": "or(item(gtceu:lv_1a_energy_converter)item(gtceu:lv_4a_energy_converter)item(gtceu:lv_8a_energy_converter)item(gtceu:lv_16a_energy_converter))"
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "{quests.steam_age.alternator.title}"
+			x: -1.0d
+			y: -6.0d
+		}
+		{
 			dependencies: [
 				"7567E885B7166603"
 				"1C5F5EDAEE355130"
@@ -1418,6 +1450,7 @@
 		{
 			dependencies: [
 				"170B544373A16112"
+				"2DC24661CAD557B0"
 				"1AD51E2B66EA7F67"
 				"6E186F9C57155BFA"
 			]
