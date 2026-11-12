@@ -1,0 +1,65 @@
+{
+    "name": "ジャム作り",
+    "category": "tfg:cooking",
+    "icon": "tfc:textures/item/jar/cloudberry.png",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "anchor": "index",
+            "text": "$(li)$(bold)$(l:cooking/jam#jarring_station)瓶詰め機$()$(li)$(bold)$(l:cooking/jam#shelves)棚$()$(li)$(bold)$(l:cooking/jam#jarbnets)収納棚$()"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tag:tfg:foods/all_jams",
+            "anchor": "jam",
+            "title": "ジャムの瓶詰め",
+            "text": "$(thing)瓶$()は、果物を長期間保存するためのジャム作りに使用されます。ジャム瓶の用意は、$(thing)ガラス細工$()によって得られる$(thing)空のジャム瓶$()作りから始まります。その後、$(thing)ジャム瓶の蓋$()を取り付けることで、$(thing)\n空の蓋付きジャム瓶$()が完成します。$(br)鍋に $(thing)甘味料$() と $(thing)果物$() を2～4個入れて煮詰めます。レシピが完了したら、\n空の蓋付きジャム瓶を手にもって$(item)$(k:key.use)$() を押して、$(thing)密封されたジャム入り瓶$() を作成します。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "firmalife:vat,firmalife:jarring_station",
+            "anchor": "jarring_station",
+            "title": "ジャムの自動化",
+            "text": "ジャムは、$(l:cooking/cooking_methods#vat)釜$()と$(l:cooking/cooking_methods#jarring_station)瓶詰め機$()を使って大量生産することもできます。材料を釜に投入し、レッドストーンを使って蓋を閉め、瓶詰め機から完成品を取り出します。"
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "開封",
+            "recipe": "tfc:crafting/unseal_plum_jar",
+            "text": "レシピでジャム瓶を使用するには、まずクラフトテーブルで瓶の封を開けてください。蓋は回収できません。封を開けた瓶の保存期間はわずか数日です！"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tag:tfc:jar_shelves,tag:beneath:jar_shelves",
+            "anchor": "shelves",
+            "title": "棚",
+            "text": "$(thing)棚$()は、頑丈な壁に取り付けることができます。直接設置することも、すでに設置されている瓶のブロックをクリックして設置することもできます。棚の上面は、アイテムや追加の瓶、その他のブロックを設置するための固い面として扱われます。$(br)瓶は、$(item)$(k:key.use)$() を使用して、あらゆる固い面に設置できます。1つのブロックには、種類を問わず4つの瓶を設置できます。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tag:firmalife:jarbnets",
+            "anchor": "jarbnet",
+            "title": "収納棚",
+            "text": "収納棚は、$(item)瓶$()、$(item)ろうそく$()、$(item)水差し$()用の収納ブロックです。$(br2)素手でクリック、$(item)$(k:key.sneak)$()+クリックで開閉できます。$(br)$(br)中にろうそくが入っている場合は、火をつけて小さな光源にできます。"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "関連項目",
+            "anchor": "relations",
+            "entries": [
+                "tfg:cooking/food_and_water",
+                "tfg:cooking/cooking_methods",
+                "tfg:cooking/decay",
+                "tfg:cooking/sandwiches"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 8,
+    "extra_recipe_mappings": {
+        "tag:tfg:foods/all_jams": 1,
+        "tag:tfc:jar_shelves": 5,
+        "tag:beneath:jar_shelves": 5,
+        "tag:firmalife:jarbnets": 6
+    }
+}

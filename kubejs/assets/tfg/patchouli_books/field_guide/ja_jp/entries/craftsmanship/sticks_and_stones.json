@@ -1,0 +1,203 @@
+{
+	"name": "棒と石",
+	"category": "tfg:craftsmanship",
+	"icon": "tfg:flint_arrow_head",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(tfg)で最初に入手できるのは棒、小枝、火打石、小石です。これらはほぼすべての気候で地面に落ちています。$(item)$(k:key.use)$()か壊すことで拾えます。"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"multiblock": {
+				"pattern": [
+					[
+						"     ",
+						"     ",
+						"  0  ",
+						"     ",
+						"     "
+					],
+					[
+						"1    ",
+						" 2  4",
+						"   3 ",
+						" 4   ",
+						"6   5"
+					],
+					[
+						"GGGGG",
+						"GGGGG",
+						"GGGGG",
+						"GGGGG",
+						"GGGGG"
+					]
+				],
+				"mapping": {
+					"G": "tfc:grass/sandy_loam",
+					"1": "tfc:rock/loose/limestone[count=1]",
+					"2": "tfc:rock/loose/limestone[count=2]",
+					"3": "tfc:rock/loose/dolomite[count=3]",
+					"4": "tfc:groundcover/stick",
+					"5": "#tfc:twigs",
+					"6": "tfc:groundcover/flint"
+				}
+			},
+			"name": "例",
+			"text": "小石や棒の生成の例です。",
+			"enable_visualize": false
+		},
+		{
+			"type": "patchouli:text",
+			"anchor": "knapping",
+			"text": "棒は地面に落ちている棒や小枝を拾い集めるほか、木の葉を素手で壊すことでも入手できます。石と棒が揃ったら、$(thing)ナッピング$()を始めましょう。ナッピングとは石同士を打ち付けて目的の形に加工する作業です。行うには石を2つ以上手に持ち、空中を右クリックすると$(thing)ナッピングGUI$()が開きます。"
+		},
+		{
+			"type": "patchouli:image",
+			"images": [
+				"tfc:textures/gui/book/gui/rock_knapping.png"
+			],
+			"text": "加工GUI。",
+			"border": false
+		},
+		{
+			"type": "patchouli:text",
+			"text": "ナッピングでは、狙った形になるようにマスを削っていきます。例えば右に表示された形に合わせて$(item)$(k:key.attack)$()で削ればナイフの刃が作れます。$(br2)クラフトと同様で、目的の形状に位置の関係はなく、一部のレシピでは1度に複数個作れるものもあります。"
+		},
+		{
+			"type": "tfg:rock_knapping_recipe",
+			"anchor": "knife",
+			"recipes": [
+				"tfg:rock_knapping/stone_knife_head",
+				"tfg:rock_knapping/stone_knife_head_1",
+				"tfg:rock_knapping/stone_knife_head_2",
+				"tfg:rock_knapping/stone_knife_head_3"
+			],
+			"text": "いくつかの異なる種類の岩石から作られたナイフの刃。"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"anchor": "flint",
+			"title": "火打石の手加工",
+			"item": "gtceu:flint_hoe_head,gtceu:flint_knife_head,gtceu:flint_shovel_head,gtceu:flint_axe_head,gtceu:flint_sword_head,tfg:flint_club_head,tfg:flint_arrow_head",
+			"text": "火打石は、石のナッピングで作れるアイテムの多くと同じものを製作できるほか、矢じりのような独自のアイテムも作ることができます。火打石製のアイテムは、ステータスの面で石製のアイテムよりもはるかに優れていることがよくあります。川や湖の底に散らばっている火打石の破片を探せば、簡単に火打石を手に入れることができます。"
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "gtceu:shaped/knife_stone",
+			"text": "石器の頭は、棒や小枝、骨などと組み合わせることで道具として完成させられます。$(br2)石のナイフは植物を刈ることで$(thing)藁$()を集めることができます。"
+		},
+		{
+			"type": "tfg:rock_knapping_recipe",
+			"recipes": [
+				"tfg:rock_knapping/stone_axe_head"
+			],
+			"text": "$(thing)斧$() を使用すると、葉も含めて木全体を切り倒すことができます。$(l:the_world/wild_fruits#fruit_trees)果樹の苗木$() を入手するには、斧が必要です。"
+		},
+		{
+			"type": "tfg:rock_knapping_recipe",
+			"recipes": [
+				"tfg:rock_knapping/stone_shovel_head"
+			],
+			"text": "$(thing)シャベル$()は土系ブロックを掘るのに使えます。また、$(thing)土$()や$(thing)草ブロック$()に$(item)使用する$()ことで、$(thing)道$()を作ることもできます。"
+		},
+		{
+			"type": "tfg:rock_knapping_recipe",
+			"recipes": [
+				"tfg:rock_knapping/stone_hoe_head",
+				"tfg:rock_knapping/stone_hoe_head_1",
+				"tfg:rock_knapping/stone_hoe_head_2"
+			],
+			"text": "$(thing)クワ$()は$(l:agriculture/growing_crops)農業$()に使用する道具です。また、ナイフと同様に葉や草などの植物の除去にも使えます。"
+		},
+		{
+			"type": "tfg:rock_knapping_recipe",
+			"recipes": [
+				"tfg:rock_knapping/stone_hammer_head"
+			],
+			"text": "$(thing)ハンマー$()は$(l:game_mechanics/damage_types)打撃$()系の武器として使えますが、主要な用途は$(l:craftsmanship/anvils)鍛造$()作業でしょう。"
+		},
+		{
+			"type": "tfg:rock_knapping_recipe",
+			"recipes": [
+				"tfc:rock_knapping/javelin_head_sedimentary",
+				"tfc:rock_knapping/javelin_head_metamorphic",
+				"tfc:rock_knapping/javelin_head_igneous_extrusive",
+				"tfc:rock_knapping/javelin_head_igneous_intrusive"
+			],
+			"text": "最後に、$(thing)槍$()は投げて攻撃できる原始的な武器であり、$(l:game_mechanics/damage_types)貫通$()属性の武器としても扱えます。石器時代の狩りの主役ですね。"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "関連項目",
+			"anchor": "relations",
+			"entries": [
+				"tfg:the_world/wild_fruits",
+				"tfg:agriculture/growing_crops",
+				"tfg:the_world/earth_tree_index",
+				"tfg:the_world/geology",
+				"tfg:craftsmanship/pottery",
+				"tfg:craftsmanship/metallurgy"
+			]
+		}
+	],
+	"read_by_default": false,
+	"sortnum": 0,
+	"extra_recipe_mappings": {
+		"tfc:stone/knife_head/sedimentary": 6,
+		"tfc:stone/knife_head/metamorphic": 6,
+		"tfc:stone/knife_head/igneous_extrusive": 6,
+		"tfc:stone/knife_head/igneous_intrusive": 6,
+		"tfc:stone/knife/sedimentary": 6,
+		"tfc:stone/knife/metamorphic": 6,
+		"tfc:stone/knife/igneous_extrusive": 6,
+		"tfc:stone/knife/igneous_intrusive": 6,
+		"gtceu:flint_hoe_head": 7,
+		"gtceu:flint_knife_head": 7,
+		"gtceu:flint_shovel_head": 7,
+		"gtceu:flint_axe_head": 7,
+		"gtceu:flint_sword_head": 7,
+		"tfg:flint_club_head": 7,
+		"tfg:flint_arrow_head": 7,
+		"tfc:stone/axe_head/sedimentary": 8,
+		"tfc:stone/axe_head/metamorphic": 8,
+		"tfc:stone/axe_head/igneous_extrusive": 8,
+		"tfc:stone/axe_head/igneous_intrusive": 8,
+		"tfc:stone/axe/sedimentary": 8,
+		"tfc:stone/axe/metamorphic": 8,
+		"tfc:stone/axe/igneous_extrusive": 8,
+		"tfc:stone/axe/igneous_intrusive": 8,
+		"tfc:stone/shovel_head/sedimentary": 9,
+		"tfc:stone/shovel_head/metamorphic": 9,
+		"tfc:stone/shovel_head/igneous_extrusive": 9,
+		"tfc:stone/shovel_head/igneous_intrusive": 9,
+		"tfc:stone/shovel/sedimentary": 9,
+		"tfc:stone/shovel/metamorphic": 9,
+		"tfc:stone/shovel/igneous_extrusive": 9,
+		"tfc:stone/shovel/igneous_intrusive": 9,
+		"tfc:stone/hoe_head/sedimentary": 10,
+		"tfc:stone/hoe_head/metamorphic": 10,
+		"tfc:stone/hoe_head/igneous_extrusive": 10,
+		"tfc:stone/hoe_head/igneous_intrusive": 10,
+		"tfc:stone/hoe/sedimentary": 10,
+		"tfc:stone/hoe/metamorphic": 10,
+		"tfc:stone/hoe/igneous_extrusive": 10,
+		"tfc:stone/hoe/igneous_intrusive": 10,
+		"tfc:stone/hammer_head/sedimentary": 11,
+		"tfc:stone/hammer_head/metamorphic": 11,
+		"tfc:stone/hammer_head/igneous_extrusive": 11,
+		"tfc:stone/hammer_head/igneous_intrusive": 11,
+		"tfc:stone/hammer/sedimentary": 11,
+		"tfc:stone/hammer/metamorphic": 11,
+		"tfc:stone/hammer/igneous_extrusive": 11,
+		"tfc:stone/hammer/igneous_intrusive": 11,
+		"tfc:stone/javelin_head/sedimentary": 12,
+		"tfc:stone/javelin_head/metamorphic": 12,
+		"tfc:stone/javelin_head/igneous_extrusive": 12,
+		"tfc:stone/javelin_head/igneous_intrusive": 12,
+		"tfc:stone/javelin/sedimentary": 12,
+		"tfc:stone/javelin/metamorphic": 12,
+		"tfc:stone/javelin/igneous_extrusive": 12,
+		"tfc:stone/javelin/igneous_intrusive": 12
+	}
+}

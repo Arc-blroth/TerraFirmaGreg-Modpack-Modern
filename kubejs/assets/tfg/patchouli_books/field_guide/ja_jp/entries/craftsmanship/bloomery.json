@@ -1,0 +1,273 @@
+{
+    "name": "塊鉄炉",
+    "category": "tfg:craftsmanship",
+    "icon": "tfc:bloomery",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(thing)塊鉄炉$()は、$(thing)鉄鉱石$()を製錬し$(thing)塊鉄$()を作成します。この$(thing)塊鉄$()を鍛造することで$(thing)錬鉄$()になります。代表的な鉄鉱石として、$(item)赤鉄鉱$()、$(item)褐鉄鉱$()、$(item)磁鉄鉱$()などがありますが、これらはそのまま溶かそうとすると$(thing)鋳鉄$()になってしまいます。しかし、鋳鉄は実用的な強度を兼ね備えていません。実用的な強度の鉄である「錬鉄」を作成するために、塊鉄炉を利用する必要があります。ちなみに、鉄を含むものであれば、ツールや鋳鉄インゴットなども含めて、どんなものでも材料として利用できます！"
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "tfc:crafting/bloomery",
+            "text": "塊鉄炉は、$(thing)二重青銅プレート$() 8枚、つまり合計32個の青銅インゴットで作られます。$(br)また、塊鉄炉の建設には、$(t:#tfc:bloomery_insulation)$(6)22個の石のブロック$()（石レンガなど）が必要になります。"
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        " A ",
+                        "A A",
+                        " A "
+                    ],
+                    [
+                        " A ",
+                        "A A",
+                        " A "
+                    ],
+                    [
+                        " A ",
+                        "A A",
+                        " A "
+                    ],
+                    [
+                        "AA ",
+                        "B0A",
+                        "AA "
+                    ],
+                    [
+                        " A ",
+                        "AAA",
+                        " A "
+                    ]
+                ],
+                "mapping": {
+                    "B": "tfc:bloomery[facing=north]",
+                    "A": "tfc:rock/smooth/dacite"
+                }
+            },
+            "name": "塊鉄炉の構造",
+            "text": "最大サイズの塊鉄炉。塊鉄炉本体は$(item)$(k:key.use)$()で開閉します。",
+            "enable_visualize": true
+        },
+        {
+            "type": "patchouli:text",
+            "text": "塊鉄炉は最大サイズで構築した場合、48個まで$(thing)投入物$()を入れることができます。煙突1層につき16個の投入物に対応できるようになります。煙突を1層高くするには、石ブロックをさらに2段積み重ねてください。$(br2)素材と燃料を投入する際は、上まで登って中にアイテムを$(item)$(k:key.drop)$()でドロップします。すると灰色の鉱石が積み上がったような状態になります。$(br2)燃料には$(item)木炭$()が使用できます。"
+        },
+        {
+            "type": "patchouli:image",
+            "images": [
+                "tfc:textures/gui/book/tutorial/bloomery_hole.png"
+            ],
+            "text": "塊鉄炉では、$(thing)木炭1つ$()と$(thing)鋳鉄144mB分$()を使って、$(thing)塊鉄$()を1つ作り出します。",
+            "border": true
+        },
+        {
+            "type": "patchouli:text",
+            "text": "ほとんどの鉄鉱石の粉を溶かすと129mBの鉄になるため、純度100％の鋳鉄インゴットを使用する場合を除き、塊鉄炉を満杯にするには $(item)25個の鉄鉱石粉$() と $(item)22個の木炭$() を使用することをお勧めします。これにより、57mBの鉄が失われます。$(br)$(thing)燃料$()と$(thing)鉱石$()を両方投入して塊鉄炉を満たしたら、閉じてある塊鉄炉本体に火を付けて$(t:12.5 min)$(6)ゲーム内で15時間$()が経過するまで、塊鉄炉が処理を完了するのを待ちます。塊鉄炉が停止すると、$(thing)塊鉄ブロック$()が残ります。この中には$(thing)未加工の塊鉄$()が含まれており、ピッケルなどでを掘り出すことで$(thing)塊鉄$()を取り出せます。"
+        },
+        {
+            "type": "tfg:table",
+            "anchor": "ratio_table",
+            "strings": [
+                {
+                    "text": "鉄の種類",
+                    "bold": true
+                },
+                {
+                    "text": "鉄",
+                    "bold": true
+                },
+                {
+                    "text": "燃料",
+                    "bold": true
+                },
+                {
+                    "text": "スロット",
+                    "bold": true
+                },
+                {
+                    "text": "塊鉄",
+                    "bold": true
+                },
+                {
+                    "text": "廃棄量",
+                    "bold": true
+                },
+                {
+                    "text": "鋳鉄のインゴット"
+                },
+                {
+                    "text": "24"
+                },
+                {
+                    "text": "24"
+                },
+                {
+                    "text": "48/48"
+                },
+                {
+                    "text": "24"
+                },
+                {
+                    "text": "0mB"
+                },
+                {
+                    "text": "129mB 鉱石粉末"
+                },
+                {
+                    "text": "25"
+                },
+                {
+                    "text": "22"
+                },
+                {
+                    "text": "47/48"
+                },
+                {
+                    "text": "22"
+                },
+                {
+                    "text": "57mB"
+                },
+                {
+                    "text": "129mB 鉱石粉末"
+                },
+                {
+                    "text": "19"
+                },
+                {
+                    "text": "17"
+                },
+                {
+                    "text": "36/48"
+                },
+                {
+                    "text": "17"
+                },
+                {
+                    "text": "3mB"
+                }
+            ],
+            "text": "ほんの少しの鉄のロスを気にしすぎるのは時間のムダですよ！",
+            "title": "塊鉄炉の比率",
+            "legend": [],
+            "columns": 5,
+            "first_column_width": 70,
+            "column_width": 32,
+            "row_height": 20,
+            "left_buffer": 2,
+            "top_buffer": 12,
+            "draw_background": false
+        },
+        {
+            "type": "patchouli:empty",
+            "draw_filler": false
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "X"
+                    ],
+                    [
+                        "0"
+                    ]
+                ],
+                "mapping": {
+                    "X": "tfc:bloom[layers=8]"
+                }
+            },
+            "name": "塊鉄ブロック",
+            "text": "塊鉄の塊",
+            "enable_visualize": false
+        },
+        {
+            "type": "tfg:anvil_recipe",
+            "recipe": "tfc:anvil/refined_iron_bloom",
+            "text": "$(thing)未加工の塊鉄$()を$(l:craftsmanship/anvils)金床$()で鍛造して、$(thing)鍛造された塊鉄$()を作らなければなりません。そして、それをさらに加工して$(thing)錬鉄インゴット$()にする必要があります。$(br)鍛造工程を自動化するには、$(l:craftsmanship/anvils#helve_hammer)動力鍛造ハンマー$()の使用をお勧めします。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "tips",
+            "text": "$(li)塊鉄炉の容量を超えてアイテムを入れると、余分なものは前面から排出されてしまいます。$(li)火をつける前の塊鉄炉から材料を取り出す場合は、内部のブロックの塊ではなく、塊鉄炉本体を壊しましょう。$(li)塊鉄をそのまま溶かしても鋳鉄になるだけです。必ず金床で鍛造しましょう！",
+            "title": "塊鉄炉運用のヒント"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "steam_bloomery",
+            "title": "蒸気式塊鉄炉",
+            "item": "tfg:steam_bloomery",
+            "text": "$(item)黒鋼$()を作成すれば、$(thing)蒸気式塊鉄炉$()が利用可能になります。この施設は、高圧蒸気を利用することで従来の製鉄所よりも高速かつ効率的であるだけでなく、自動的に塊鉄を生産することも可能です。"
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        " A ",
+                        "A A",
+                        " A "
+                    ],
+                    [
+                        " A ",
+                        "O A",
+                        " A "
+                    ],
+                    [
+                        " A ",
+                        "I A",
+                        " A "
+                    ],
+                    [
+                        "AA ",
+                        "B0A",
+                        "AA "
+                    ],
+                    [
+                        " F ",
+                        "SAF",
+                        " F "
+                    ]
+                ],
+                "mapping": {
+                    "B": "tfg:steam_bloomery[facing=north]",
+                    "A": "tfc:rock/smooth/dacite",
+                    "F": "gtceu:bronze_firebox_casing",
+                    "S": "gtceu:steam_input_hatch[facing=north]",
+                    "I": "gtceu:steam_input_bus[facing=north]",
+                    "O": "gtceu:steam_output_bus[facing=north]"
+                }
+            },
+            "name": "構造",
+            "text": "蒸気式塊鉄炉には、アイテム入力バス、アイテム出力バス、蒸気入力ハッチ、および青銅製火室外装\n3つが必要です。",
+            "enable_visualize": true
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "関連項目",
+            "anchor": "relations",
+            "entries": [
+                "tfg:craftsmanship/pottery",
+                "tfg:craftsmanship/metallurgy",
+                "tfg:craftsmanship/charcoal_forge",
+                "tfg:craftsmanship/crucible",
+                "tfg:craftsmanship/charcoal_pit",
+                "tfg:craftsmanship/blast_furnace",
+                "tfg:craftsmanship/anvils",
+                "tfg:game_mechanics/heating"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 9,
+    "extra_recipe_mappings": {
+        "tfc:bloom": 10,
+        "tfc:raw_iron_bloom": 10,
+        "tfc:refined_iron_bloom": 10,
+        "tfc:bloomery": 1,
+        "tfg:steam_bloomery": 12
+    }
+}

@@ -183,6 +183,9 @@ const registerFirmaLifeRecipes = (event) => {
 		.itemOutputs('8x firmalife:cork')
 		.duration(300)
 		.EUt(GTValues.VA[GTValues.ULV])
+		
+	event.shapeless('16x firmalife:bottle_label', ['minecraft:paper', '#forge:tools/knives', '#forge:wax'])
+		.id('firmalife:crafting/bottle_label')
 
 	event.recipes.gtceu.assembler('firmalife:bottle_label')
 		.itemInputs('#forge:wax', 'minecraft:paper')
@@ -197,8 +200,6 @@ const registerFirmaLifeRecipes = (event) => {
 		.EUt(GTValues.VA[GTValues.ULV])
 		.duration(100)
 		.category(GTRecipeCategories.INGOT_MOLDING)
-
-	event.replaceInput({ id: 'firmalife:crafting/bottle_label' }, 'firmalife:beeswax', '#forge:wax')
 	
 	event.shapeless('firmalife:fruit_leaf', ['#tfc:fruit_tree_leaves']).id('tfg:shapeless/firmalife/fruit_leaf_from_fruit_leaves');
 
@@ -357,16 +358,16 @@ const registerFirmaLifeRecipes = (event) => {
 
 	event.recipes.gtceu.shaped('2x firmalife:sweeper', [
 		'ABD',
-		'CB '
+		'C  '
 	], {
 		A: '#forge:saw_heads/wrought_iron',
 		B: '#forge:rods/wrought_iron',
-		C: '#forge:small_gears/red_alloy',
+		C: 'minecraft:redstone',
 		D: '#forge:tools/wrenches'
 	}).addMaterialInfo().id('tfg:crafting/sweeper');
 
 	event.recipes.gtceu.assembler('tfg:sweeper')
-		.itemInputs('#forge:saw_heads/wrought_iron', '2x #forge:rods/wrought_iron', '#forge:small_gears/red_alloy')
+		.itemInputs('#forge:saw_heads/wrought_iron', '#forge:rods/wrought_iron', 'minecraft:redstone')
 		.itemOutputs('2x firmalife:sweeper')
 		.circuit(3)
 		.duration(30)
@@ -377,18 +378,18 @@ const registerFirmaLifeRecipes = (event) => {
 
 	event.recipes.gtceu.shaped('4x firmalife:picker', [
 		'ABD',
-		'CC ',
-		'EE '
+		'C  ',
+		'E  '
 	], {
 		A: '#forge:plates/wrought_iron',
-		B: '#forge:small_gears/red_alloy',
+		B: 'minecraft:redstone',
 		C: '#forge:rods/wrought_iron',
 		D: '#forge:tools/wrenches',
 		E: '#forge:hoe_heads/wrought_iron'
 	}).addMaterialInfo().id('tfg:crafting/picker');
 
 	event.recipes.gtceu.assembler('tfg:picker')
-		.itemInputs('2x #forge:hoe_heads/wrought_iron', '#forge:plates/wrought_iron', '#forge:small_gears/red_alloy', '2x #forge:rods/wrought_iron')
+		.itemInputs('#forge:hoe_heads/wrought_iron', '#forge:plates/wrought_iron', 'minecraft:redstone', '#forge:rods/wrought_iron')
 		.itemOutputs('4x firmalife:picker')
 		.circuit(3)
 		.duration(30)

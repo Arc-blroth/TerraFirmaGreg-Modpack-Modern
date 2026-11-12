@@ -46,6 +46,21 @@ function registerTFCMetalsRecipes(event) {
 		TFC.alloyPart('tfg:aluminium_silicate', 0.08, 0.14)
 	]).id('tfg:alloy/cobalt_brass')
 
+	event.recipes.tfc.alloy('tfg:electrum', [
+		TFC.alloyPart('tfc:silver', 0.45, 0.55),
+		TFC.alloyPart('tfc:gold', 0.45, 0.55)
+	]).id('tfg:alloy/electrum')
+	
+	event.recipes.tfc.alloy('tfg:cupronickel', [
+		TFC.alloyPart('tfc:copper', 0.45, 0.55),
+		TFC.alloyPart('tfc:nickel', 0.45, 0.55)
+	]).id('tfg:alloy/cupronickel')
+
+	event.recipes.tfc.alloy('tfg:battery_alloy', [
+		TFC.alloyPart('tfg:lead', 0.75, 0.85),
+		TFC.alloyPart('tfc:tin', 0.15, 0.25)
+	]).id('tfg:alloy/battery_alloy')
+
 	//#endregion
 
 	//#region Рецепты ковки TFC слитков в GT машинах
@@ -107,6 +122,7 @@ function registerTFCMetalsRecipes(event) {
 		['tfc:metal/ingot/weak_steel', 'tfc:metal/ingot/pig_iron', 'tfc:powder/flux'])
 		.heated()
 		.recipeTier(1)
+		.circuitNumber(2)
 		.id(`greate:compacting/high_carbon_black_steel`)
 
 	event.recipes.gtceu.alloy_smelter('tfg/high_carbon_black_steel')
@@ -123,6 +139,7 @@ function registerTFCMetalsRecipes(event) {
 		['tfc:metal/ingot/weak_blue_steel', 'tfc:metal/ingot/black_steel', 'tfc:powder/flux'])
 		.heated()
 		.recipeTier(1)
+		.circuitNumber(2)
 		.id(`greate:compacting/high_carbon_blue_steel`)
 
 	event.recipes.gtceu.alloy_smelter('tfg/high_carbon_blue_steel')
@@ -139,6 +156,7 @@ function registerTFCMetalsRecipes(event) {
 		['tfc:metal/ingot/weak_red_steel', 'tfc:metal/ingot/black_steel', 'tfc:powder/flux'])
 		.heated()
 		.recipeTier(1)
+		.circuitNumber(2)
 		.id(`greate:compacting/high_carbon_red_steel`)
 
 	event.recipes.gtceu.alloy_smelter('tfg/high_carbon_red_steel')
@@ -213,6 +231,7 @@ function registerTFCMetalsRecipes(event) {
 	event.recipes.greate.compacting('tfc:jacks', ['#forge:rods/brass', '#forge:plates/brass', 'tfc:powder/flux'])
 		.heated()
 		.recipeTier(0)
+		.circuitNumber(3)
 		.id('greate:compacting/jacks')
 
 	// Декрафт Jacks
@@ -288,6 +307,18 @@ function registerTFCMetalsRecipes(event) {
 	event.recipes.tfc.blast_furnace(Fluid.of('tfc:metal/pig_iron', 1), '#tfc:flux', Fluid.of('gtceu:iron', 1))
 		.id('tfc:blast_furnace/pig_iron')
 
+	global.TFC_EQUIPMENT_METALS.forEach((metal, index) => {
+		let tier = 1;
+		if (index > 0) tier++;
+		if (index > 3) tier++;
+		if (index > 4) tier++;
+		if (index > 5) tier++;
+		if (index > 6) tier++;
+		event.remove({id: `tfc:anvil/${metal}_chain`});
+		event.recipes.tfc.anvil(`16x tfc:metal/chain/${metal}`, `#forge:ingots/${metal}`, ['hit_last', 'hit_second_last', 'draw_third_last'])
+			.tier(tier)
+			.id(`tfg:anvil/${metal}_chain`);
+	});
 	//#endregion
 
 	//#region Gravel Deposit Washing

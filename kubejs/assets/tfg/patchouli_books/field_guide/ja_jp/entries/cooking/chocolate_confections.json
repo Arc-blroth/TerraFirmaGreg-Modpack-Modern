@@ -1,0 +1,74 @@
+{
+  "name": "チョコレート菓子",
+  "category": "tfg:cooking",
+  "icon": "firmalife:textures/item/food/dark_chocolate.png",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)チョコレート作り$()にはいくつかの加工工程があり、料理を没入感を持って体験できる仕組みとなっています。$(br)チョコレート製品には、$(l:cooking/food_and_water#grain)穀物$()や$(l:cooking/food_and_water#dairy) 乳製品$()の栄養素を含んでいるほか、食べると $(l:cooking/food_and_water#sugary_transient_effect)激甘$()効果も得られるため、食事の材料として最適な選択肢となります。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "チョコレート加工を始めるには、まずカカオ豆を$(l:cooking/cooking_methods#oven)オーブン$()で$(thing)焙煎$()し、$(thing)焙煎カカオ豆$()を作る必要があります。$(br2)その後、焙煎した豆を$(thing)ナイフ$()で削り、$(thing)ココアパウダー$()と$(thing)ココアバター$()に分けられます。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l:cooking/mixing_bowl)ミキシングボウル$()は、ココアパウダー、バター、甘味料（砂糖または蜂蜜）を混ぜて$(thing)チョコレートブレンド$()を作るのに使います。$(br)ココアバターとパウダーの割合が、出来上がりを左右します:$(br)$(li)パウダー1個、バター1個、甘味料1個：ミルクチョコレート$()$(li)パウダー2個、甘味料1: ダークチョコレート$()$(li)パウダー2個、甘味料1: ホワイトチョコレート$()"
+    },
+    {
+      "type": "tfg:drying_recipe",
+      "recipe": "firmalife:drying/dark_chocolate",
+      "text": "最後にチョコレートを$(l:cooking/decay#drying)乾燥マット$()の上で乾燥させ、$(thing)チョコレート$()が完成します。"
+    },
+    {
+      "title": "チョコレートの鋳造",
+      "type": "patchouli:text",
+      "text": "$(thing)チョコレート$()は、単調なバー型だけである必要はありません！$(thing)ホワイト$()、$(thing)ミルク$()、または$(thing)ダーク$()チョコレートを$(thing)容器$()や$(thing)るつぼ$()で溶かし、型に流し込めば、チョコレート菓子を作ることができます。チョコレート菓子には、$(thing)ハート型$()、$(thing)ベル型$()、$(thing)ナイフ型$()の3種類があります。それぞれ、異なる型にチョコレートを流し込むことで作られます。"
+    },
+    {
+      "type": "tfg:knapping_recipe",
+      "recipe": "tfcchannelcasting:clay_knapping/unfired_heart_mold",
+      "text": "粘土を成形して$(thing)ハートの型$()を作れば、$(thing)ハート形$()のチョコレートを作るのに使えます。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "チョコレート菓子はチョコレートバーと同じ栄養価がありますが、より手早く食べることができます。ただし、これらの菓子を特定の時期に作ると、栄養価が2倍になる特性が付与されます。$(thing)ハート型のチョコレート$()は2月に$(thing)ロマンチック$()という特性を、$(thing)ベル型のチョコレート$()は12月に$(thing)お祭り気分$()という特性を、そして$(thing)ナイフ型のチョコレート$()は10月に$(thing)恐ろしげ$()という特性を獲得します。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "さらに、お菓子に$(thing)フィリング$()を詰めることで、追加の効果を得ることができます。$(thing)ジャム$()を詰めたお菓子には、$(thing)果物$()の栄養が追加されます。$(thing)酒類$()を詰めたお菓子は、プラスのポーション効果をもたらします。"
+    },
+    {
+      "type": "tfg:sealed_barrel_recipe",
+      "recipe": "tfcchannelcasting:barrel/fill_with_sweet_liquor",
+      "text": "$(thing)甘いお酒$()が詰まったチョコレートを食べると、移動速度上昇効果が得られます。"
+    },
+    {
+      "type": "tfg:sealed_barrel_recipe",
+      "recipe": "tfcchannelcasting:barrel/fill_with_strong_liquor",
+      "text": "$(thing)強いお酒$()が詰められたチョコレートを食べると、耐性効果が得られます。"
+    },
+    {
+      "type": "tfg:sealed_barrel_recipe",
+      "recipe": "tfcchannelcasting:barrel/fill_with_whiskey",
+      "text": "$(thing)ウイスキー$()が入ったチョコレートを食べると、採掘速度上昇効果が得られます。"
+    },
+    {
+      "type": "patchouli:relations",
+      "title": "関連項目",
+      "anchor": "relations",
+      "entries": [
+            "tfg:cooking/alcohol",
+            "tfg:cooking/jam",
+            "tfg:the_world/wild_fruits"
+      ]
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 11,
+  "extra_recipe_mappings": {
+    "tag:firmalife:foods/chocolate": 0,
+    "tag:firmalife:chocolate_blends": 2,
+    "tag:tfcchannelcasting:foods/chocolate_sweet": 6
+  }
+}

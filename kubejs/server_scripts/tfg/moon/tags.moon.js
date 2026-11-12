@@ -14,6 +14,10 @@ function registerTFGMoonBlockTags(event) {
 
 	event.add('buildinggadgets2:deny', '#forge:budding')
 	event.add('create:non_movable', '#forge:budding')
+	event.add('matter_manipulator:immovable', '#forge:budding')
+
+	event.add('create:non_movable', 'tfg:budding_charge')
+	event.add('create:non_movable', 'tfg:me_assembler')
 
 	event.add('ad_astra:moon_stone_replaceables', 'ad_astra:moon_sand')
 	event.add('ad_astra:moon_stone_replaceables', 'tfg:rock/hardened_moon_stone')

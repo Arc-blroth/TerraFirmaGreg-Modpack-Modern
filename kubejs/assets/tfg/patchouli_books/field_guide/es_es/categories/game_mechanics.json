@@ -1,0 +1,6 @@
+{
+  "name": "Mecánicas del juego",
+  "description": "El mundo de $(tfg) ofrece muchas mecánicas únicas que cambian la forma de jugar en comparación con el Minecraft base. Estas mecánicas te acompañarán durante toda tu partida.",
+  "icon": "minecraft:textures/mob_effect/resistance.png",
+  "sortnum": 0
+}

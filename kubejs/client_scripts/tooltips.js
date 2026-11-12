@@ -36,6 +36,9 @@ const registerTooltips = (event) => {
 	event.addAdvanced(['minecraft:shield'], (item, advanced, text) => {
 		text.add(1, Text.translate('tfg.tooltip.wooden_shield'))
 	})
+	event.addAdvanced(['minecraft:campfire'], (item, advanced, text) => {
+		text.add(1, Text.translate('tfg.tooltip.campfire'))
+	})
 
 	//#region Multiblock Controler Tooltip
 
@@ -192,7 +195,7 @@ const registerTooltips = (event) => {
 		"slash_l", "slash_r", "slash_rl",
         "num_0", "num_1", "num_2", "num_3", "num_4",
         "num_5", "num_6", "num_7", "num_8", "num_9",
-        "number"
+        "number", "diagonal_line", "fullcorner", "angled_edge_l", "angled_edge_r", "cat", "creeper"
     ];
 	roadMaskIds.forEach(mask => {
 		event.addAdvanced([`tfg:asphalt_road_stencil_${mask}`], (item, advanced, text) => {
@@ -201,6 +204,8 @@ const registerTooltips = (event) => {
 	})
 
 	//#endregion
+
+	//#region Planter
 	
 	event.addAdvanced(['tfg:grow_light'], (item, advanced, text) => {
 		text.add(1, Text.translate('tfg.tooltip.grow_light_disapointment'));
@@ -229,6 +234,8 @@ const registerTooltips = (event) => {
 	event.addAdvanced(['firmalife:trellis_planter'], (item, advanced, text) => {
 		text.add(1, Text.translate('tfg.tooltip.firmalife_greenhouse.oxygen_required.block'));
 	})
+
+	//#endregion
 
 	// Hot or not containers
 	event.addAdvanced(['#tfg:insulating_container'], (item, advanced, text) => {
@@ -422,6 +429,10 @@ const registerTooltips = (event) => {
 		text.add(1, Text.translate("gtceu.universal.tooltip.item_storage_capacity", "36"))
 		text.add(2, Text.translate("gtceu.universal.tooltip.fluid_storage_capacity", "80,000"))
 	})
+	event.addAdvanced(['fluidlogistics:copper_basket'], (item, advanced, text) => {
+		text.add(1, Text.translate("gtceu.universal.tooltip.item_storage_capacity", "27"))
+		text.add(2, Text.translate("gtceu.universal.tooltip.fluid_storage_capacity", "8,000"))
+	})
 	event.addAdvanced(['create:fluid_tank', 'create_connected:fluid_vessel', 'fluidlogistics:multi_fluid_tank', 'fluidlogistics:horizontal_multi_fluid_tank'], (item, advanced, text) => {
 		text.add(1, Text.translate("gtceu.universal.tooltip.fluid_storage_capacity", "32,000"))
 	})
@@ -433,6 +444,9 @@ const registerTooltips = (event) => {
 	})
 	event.addAdvanced(['#tfc:fired_vessels'], (item, advanced, text) => {
 		text.add(1, Text.translate("gtceu.universal.tooltip.fluid_storage_capacity", "3,024"))
+	})
+	event.addAdvanced(['tfg:electric_flask'], (item, advanced, text) => {
+		text.add(1, Text.translate("gtceu.universal.tooltip.fluid_storage_capacity", "4,000"))
 	})
 	event.addAdvanced(['waterflasks:iron_flask', 'waterflasks:red_steel_flask'], (item, advanced, text) => {
 		text.add(1, Text.translate("gtceu.universal.tooltip.fluid_storage_capacity", "2,000"))
@@ -533,6 +547,9 @@ const registerTooltips = (event) => {
 	event.addAdvanced(['minecraft:player_head'], (item, advanced, text) => {
 		text.add(1, Text.translate('tfg.tooltip.player_head'));
 	});
+	event.addAdvanced(['diggerhelmet:mining_speed_modifier'], (item, advanced, text) => {
+		text.add(1, Text.translate('tfg.tooltip.digger_helmet_mining_upgrade'));
+	});
 
 	// AE2
 	event.addAdvanced(['tfg:wireless_card'], (item, advanced, text) => {
@@ -553,6 +570,13 @@ const registerTooltips = (event) => {
     })
 	event.addAdvanced('ae2:damaged_budding_quartz', (item, advanced, text) => {
       text.add(1, Text.translate('block.ae2.damaged_budding_quartz.tooltip'));
+    })
+
+	// Electical Flask
+
+	event.addAdvanced('tfg:electric_flask', (item, advanced, text) => {
+      text.add(3, Text.translate('tfg.item.electric_flask.tooltip_1'));
+	  text.add(2, Text.translate('tfg.item.electric_flask.tooltip_2'));
     })
 
 	// Deprecated Items

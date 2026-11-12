@@ -404,11 +404,6 @@ function registerTFGRockRecipes(event) {
 		if (rock.chiseled != null) {
 			changeForms(rockId, rock, rock.chiseled);
 		}
-		if (rock.stonecutting != null) {
-			rock.stonecutting.forEach(stonecuttingEntry => {
-				changeForms(rockId, rock, stonecuttingEntry);
-			})
-		}
 
 		// Stonecutting
 		if (rock.stonecutterTag != null) {
@@ -424,8 +419,17 @@ function registerTFGRockRecipes(event) {
 			tag_array_half.forEach(item => {
 				event.stonecutting(`2x ${item}`, Ingredient.of(`#${rock.stonecutterTag}`).subtract(item))
 					.id(`tfg:stonecutter/${global.linuxUnfucker(item)}_half`)
-				event.stonecutting(item, Ingredient.of(`#${rock.stonecutterTag}_half`).subtract(item))
-					.id(`tfg:stonecutter/${global.linuxUnfucker(item)}_slab_to_slab`)
+
+				let other_half = Ingredient.of(`#${rock.stonecutterTag}_half`).subtract(item).itemIds.toArray().map(String);
+				if (other_half.length > 0) {
+					event.stonecutting(item, other_half)
+						.id(`tfg:stonecutter/${global.linuxUnfucker(item)}_slab_to_slab`)
+				}
+			})
+		}
+		else if (rock.stonecutting != null) {
+			rock.stonecutting.forEach(stonecuttingEntry => {
+				changeForms(rockId, rock, stonecuttingEntry);
 			})
 		}
 
@@ -651,10 +655,10 @@ function registerTFGRockRecipes(event) {
 
 	// Misc
 	event.recipes.gtceu.cutter('tfg:vanilla_stone_slab_to_plate')
-		.itemInputs('minecraft:stone_slab')
+		.itemInputs('#tfg:rock_slabs')
 		.itemOutputs('#forge:plates/stone')
 		.duration(20)
-		.EUt(GTValues.VA[GTValues.LV])
+		.EUt(GTValues.VA[GTValues.ULV])
 
 	// Sedimentary carbonate into flux
 	event.recipes.gtceu.macerator('tfg:sedimentary_carbonate_to_flux')

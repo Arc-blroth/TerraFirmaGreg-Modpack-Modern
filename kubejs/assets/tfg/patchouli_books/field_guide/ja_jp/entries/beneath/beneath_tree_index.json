@@ -1,0 +1,66 @@
+{
+	"name": "深界の樹木一覧",
+	"category": "tfg:beneath",
+	"icon": "tfg:textures/block/wood/sapling/mahoe.png",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "日光が当たらないにもかかわらず、深界にはいくつかの種類の木が生えており、そのほとんどはここでしか見られないものです！$(br2)深界での木の成長は地上と同じですが、光レベル12が必要であり、これは深界の自然光だけでは得られません。この問題を解決するには、$(l:agriculture/aqueducts)溶岩水路$()や、その他の利用可能な光源を活用することができます。"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"title": "ナンヨウスギ",
+			"anchor": "araucaria",
+			"item": "tag:tfg:araucaria_logs",
+			"text": "$(bold)ナンヨウスギ$()$(br)$(thing)クモの巣窟$() バイオームでのみ見られます。$(br)$(thing)成長にかかる日数$(): 5"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"title": "ブナ",
+			"anchor": "beech",
+			"item": "tag:tfg:beech_logs",
+			"text": "$(bold)ブナ$()$(br)$(thing)茨の木立$() と $(thing)繫茂した空洞$() バイオームで見られます。$(br)$(thing)成長にかかる日数$(): 6"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"title": "イチョウ",
+			"anchor": "ginkgo",
+			"item": "tag:wan_ancient_beasts:ginkgo_logs",
+			"text": "$(bold)イチョウ$()$(br)$(thing)繫茂した空洞$() バイオームでのみ見られます。$(br)$(thing)成長にかかる日数$(): 7"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"title": "マホエ",
+			"anchor": "mahoe",
+			"item": "tag:tfg:mahoe_logs",
+			"text": "$(bold)マホエ$()$(br)$(thing)茨の木立$() バイオームでのみ見られます。$(br)$(thing)成長にかかる日数$(): 5"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"title": "マングローブ",
+			"anchor": "mangrove",
+			"item": "tag:tfc:mangrove_logs",
+			"text": "$(bold)マングローブ$()$(br)$(thing)泥だらけの沼地$() バイオームでのみ見られます。$(br)$(thing)成長にかかる日数$(): 7$(br2)また、$(l:the_world/earth_tree_index#mangrove)オーバーワールド$()でも見られます。"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "関連項目",
+			"anchor": "relations",
+			"entries": [
+				"tfg:the_world/earth_tree_index",
+				"tfg:beneath/beneath",
+				"tfg:beneath/beneath_crops",
+				"tfg:beneath/beneath_wild_fruits",
+				"tfg:mars/mars_tree_index"
+			]
+		}
+	],
+	"extra_recipe_mappings": {
+		"tfg:wood/sapling/araucaria": 1,
+		"tfg:wood/sapling/beech": 2,
+		"tfg:wood/sapling/ginkgo": 3,
+		"tfg:wood/sapling/mahoe": 4,
+		"tfc:wood/sapling/mangrove": 5
+	},
+	"read_by_default": true
+}

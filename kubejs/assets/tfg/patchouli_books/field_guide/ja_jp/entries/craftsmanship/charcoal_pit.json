@@ -1,0 +1,275 @@
+{
+    "name": "木炭作り",
+    "category": "tfg:craftsmanship",
+    "icon": "minecraft:charcoal",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "anchor": "charcoal_pit",
+            "text": "$(thing)伏せ焼き$()は、$(thing)木炭$()を取得する方法です。伏せ焼き場は$(thing)丸太の山$()で作られます。丸太の山を配置するには、$(thing)丸太$()を持ったまま$(item)$(k:key.use)$()と$(item)$(k:key.sneak)$()を押します。さらに丸太を入れるには、丸太を持ったまま視点を入れたい丸太の山に合わせ$(item)$(k:key.use)$()を直接押すか、素手で$(item)$(k:key.use)$()を押してGUIを開いてください。"
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "X"
+                    ],
+                    [
+                        "0"
+                    ]
+                ],
+                "mapping": {
+                    "X": "tfc:log_pile"
+                }
+            },
+            "name": "丸太の山",
+            "text": "丸太の山は非常に燃えやすいです。平らな面に設置できます。",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:text",
+            "text": "伏せ焼きをするには、丸太の山を、燃えない固体ブロックで囲みます。生産される木炭の量は、丸太の山に含まれる丸太の量に比例します。燃焼を開始するには、丸太の山の一つに火をつけ、その後、それを覆ってください。うまくいけば、構造物から $(thing)煙$()のパーティクルが立ち上るのが見えるはずです。$(br)完全に断熱されていれば、伏せ焼き場はどんな大きさや形でも作ることができます。$(br)デフォルトでは、伏せ焼きの完了には $(t:15 分) ゲーム内で18時間$()かかります。"
+        },
+        {
+            "type": "patchouli:image",
+            "width": 1024,
+            "texture_width": 1024,
+            "height": 1024,
+            "texture_height": 1024,
+            "images": [
+                "tfg:textures/gui/field_guide/charcoal_pit/charcoal_pit_0.png",
+                "tfg:textures/gui/field_guide/charcoal_pit/charcoal_pit_1.png",
+                "tfg:textures/gui/field_guide/charcoal_pit/charcoal_pit_2.png",
+                "tfg:textures/gui/field_guide/charcoal_pit/charcoal_pit_3.png",
+                "tfg:textures/gui/field_guide/charcoal_pit/charcoal_pit_4.png"
+            ],
+            "text": "$(bold)チュートリアル・スライドショー：$() 2×2×2の伏せ焼き場を作る。",
+            "border": true
+        },
+        {
+            "type": "tfg:multimultiblock",
+            "text": "層状に作られる伏せ焼き場の一例。",
+            "multiblocks": [
+                {
+                    "pattern": [
+                        [
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     "
+                        ],
+                        [
+                            "XXXXX",
+                            "X   X",
+                            "X   X",
+                            "X   X",
+                            "XXXXX"
+                        ],
+                        [
+                            "XXXXX",
+                            "XXXXX",
+                            "XX0XX",
+                            "XXXXX",
+                            "XXXXX"
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:dirt/sandy_loam",
+                        "X": "tfc:dirt/sandy_loam"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     "
+                        ],
+                        [
+                            "XXXXX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XXXXX"
+                        ],
+                        [
+                            "XXXXX",
+                            "XXXXX",
+                            "XX0XX",
+                            "XXXXX",
+                            "XXXXX"
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:dirt/sandy_loam",
+                        "X": "tfc:dirt/sandy_loam",
+                        "Y": "tfc:log_pile"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     "
+                        ],
+                        [
+                            "XXXXX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XXXXX"
+                        ],
+                        [
+                            "XXXXX",
+                            "XXXXX",
+                            "XX0XX",
+                            "XXXXX",
+                            "XXXXX"
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:dirt/sandy_loam",
+                        "X": "tfc:dirt/sandy_loam",
+                        "Y": "tfc:burning_log_pile"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "     ",
+                            " XXX ",
+                            " XXX ",
+                            " XXX ",
+                            "     "
+                        ],
+                        [
+                            "XXXXX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XXXXX"
+                        ],
+                        [
+                            "XXXXX",
+                            "XXXXX",
+                            "XX0XX",
+                            "XXXXX",
+                            "XXXXX"
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:dirt/sandy_loam",
+                        "X": "tfc:dirt/sandy_loam",
+                        "Y": "tfc:log_pile"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     ",
+                            "     "
+                        ],
+                        [
+                            "XXXXX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XYYYX",
+                            "XXXXX"
+                        ],
+                        [
+                            "XXXXX",
+                            "XXXXX",
+                            "XX0XX",
+                            "XXXXX",
+                            "XXXXX"
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:dirt/sandy_loam",
+                        "X": "tfc:dirt/sandy_loam",
+                        "Y": "tfc:charcoal_pile[layers=7]"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "charcoal_pile",
+            "text": "伏せ焼き場の火が消え、煙が出なくなると、$(thing)炭の山$()が残ります。炭の山には、最大8層の$(thing)炭$()が含まれています。シャベルで掘ると、炭のアイテムを入手できます。炭の山には、$(item)$(k:key.use)$()で追加したり、配置したりすることができます。$(br2)$(bold)ヒント：$() 炭坑を丸石のような密度の高い素材で覆わないでください。完成した際に崩れて、炭が破壊されてしまう可能性があります。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "coke_oven",
+            "title": "コークス炉",
+            "text": "$(thing)コークス炉$()は、丸太を木炭に、石炭を$(item)コークス$()に自動的に変換し、その過程で$(thing)クレオソート$()を生成するマルチブロックです。この構造物は、初めて$(l:craftsmanship/bloomery)錬鉄$()を生産した時点で利用可能になり、できるだけ早く作成することをお勧めします。コークス炉は木炭の生産において作業効率を大幅に向上させるものであり、ゲームを進める上ではコークスとクレオソートの両方が必要となります。"
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "AAA",
+                        "A2A",
+                        "AAA"
+                    ],
+                    [
+                        "A1A",
+                        "C A",
+                        "AAA"
+                    ],
+                    [
+                        "AAA",
+                        "A0A",
+                        "AAA"
+                    ]
+                ],
+                "mapping": {
+                    "0": "gtceu:coke_oven_hatch[facing=down]",
+                    "1": "gtceu:coke_oven_hatch[facing=west]",
+                    "2": "gtceu:coke_oven_hatch[facing=up]",
+                    "A": "gtceu:coke_oven_bricks",
+                    "C": "gtceu:coke_oven[facing=north]"
+                }
+            },
+            "text": "原料の投入、製品の取り出し、および流体の排出を行うための、3つのハッチを備えたコークス炉の例。",
+            "enable_visualize": true
+        },
+        {
+            "type": "patchouli:text",
+            "title": "コークス炉運用のヒント",
+            "text": "$(li)コークス炉には最大4つのハッチを設置でき、←\nコークス炉用レンガブロックの代わりに設置できます。$(li)コークス炉の中央は中空でなければなりません。$(li)コークス炉のインプットハッチ\nは、排出されるアイテムで詰まることがあります。これを防ぐには、インプットハッチに向かってアイテムパイプを設置し、流れの方向を設定してください。ホッパーやシュートを使えば、そのパイプにアイテムを搬入することができます。$(li)木箱は、チェストとは異なり、丸太を収納することができます。$(li)クレオソートはすべて保管しておきましょう！"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "関連項目",
+            "anchor": "relations",
+            "entries": [
+                "tfg:craftsmanship/pit_kiln",
+                "tfg:craftsmanship/metallurgy",
+                "tfg:craftsmanship/charcoal_forge",
+                "tfg:craftsmanship/crucible",
+                "tfg:craftsmanship/blast_furnace",
+                "tfg:craftsmanship/bloomery",
+                "tfg:craftsmanship/anvils",
+                "tfg:craftsmanship/glassworking"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 5,
+    "extra_recipe_mappings": {
+        "gtceu:coke_oven_hatch": 7,
+        "gtceu:coke_oven_bricks": 7,
+        "gtceu:coke_oven": 7
+    }
+}

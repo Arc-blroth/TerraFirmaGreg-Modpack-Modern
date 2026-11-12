@@ -196,7 +196,7 @@
 	"sound.wan_ancient_beasts.eater_death": "Кусака помирає",
 	"sound.wan_ancient_beasts.eater_hit": "Кусаку поранено",
 	"sound.wan_ancient_beasts.eater_idle": "Звуки Пожирача",
-	"sound.wan_ancient_beasts.eater_roar": "Рик кусаки",
+	"sound.wan_ancient_beasts.eater_roar": "Рик Кусаки",
 	"sound.wan_ancient_beasts.eater_sleep": "Пожирач дрімає",
 	"sound.wan_ancient_beasts.eater_step": "Кроки Пожирача",
 	"sound.wan_ancient_beasts.egg_hatched": "Яйце вилупилося",
@@ -279,5 +279,8 @@
 	"trim_pattern.wan_ancient_beasts.ancient_upgrade_smithing_template": "Шаблон ковальства для стародавнього покращення",
 	"trim_pattern.wan_ancient_beasts.sniff": "Нюх",
 	"trim_pattern.wan_ancient_beasts.spike": "Шип",
-	"upgrade.wan_ancient_beasts.ancient_upgrade": "Доісторичне покращення"
+	"upgrade.wan_ancient_beasts.ancient_upgrade": "Доісторичне покращення",
+	"enchantment.wan_ancient_beasts.egg_thief.desc": "Вища ймовірність знайти яйця під час розчісування",
+	"enchantment.wan_ancient_beasts.preservation.desc": "Підозрілий блок потребує менше рухів пензлем, щоб віддати свою здобич",
+	"enchantment.wan_ancient_beasts.treasure_hunter.desc": "Краща здобич під час розчищення підозрілих блоків пензлем"
 }

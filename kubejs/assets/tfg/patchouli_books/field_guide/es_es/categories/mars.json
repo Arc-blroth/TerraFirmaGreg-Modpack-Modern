@@ -1,0 +1,6 @@
+{
+	"name": "Marte",
+	"description": "Todo lo que hay que saber sobre $(c)Marte$(), el cuarto planeta desde el Sol.$(br2)Se puede visitar Marte en $(5)EV$().",
+	"icon": "tfg:marker/mars",
+	"sortnum": 26
+}

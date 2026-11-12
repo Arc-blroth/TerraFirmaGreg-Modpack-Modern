@@ -1,0 +1,55 @@
+{
+    "name": "書寫桌",
+    "category": "tfg:craftsmanship",
+    "icon": "tfc:wood/scribing_table/oak",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(thing)書寫桌$()用來重新命名物品，需要消耗$(thing)黑色染料$()，可使用一般染料物品或一桶染料流體。"
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "X"
+                    ],
+                    [
+                        "0"
+                    ]
+                ],
+                "mapping": {
+                    "X": "#tfc:scribing_tables"
+                }
+            },
+            "name": "",
+            "text": "書寫桌",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:image",
+            "images": [
+                "tfc:textures/gui/book/gui/scribing.png"
+            ],
+            "text": "書寫介面上方輸入文字，左側放要改名的物品，中間放染料，成品從右側欄位取出。",
+            "border": false
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "延伸閱讀",
+            "anchor": "relations",
+            "entries": [
+                "tfg:craftsmanship/anvils",
+                "tfg:craftsmanship/barrels",
+                "tfg:craftsmanship/quern",
+                "tfg:craftsmanship/sewing_table",
+                "tfg:agriculture/papermaking"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 18,
+    "extra_recipe_mappings": {
+        "tag:tfc:scribing_tables": 0
+    }
+}

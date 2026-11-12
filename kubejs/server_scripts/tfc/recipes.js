@@ -161,7 +161,7 @@ const registerTFCRecipes = (event) => {
 		.inputFluids(Fluid.of('tfc:limewater', 100))
 		.itemOutputs('16x tfc:mortar')
 		.duration(600)
-		.EUt(8)
+		.EUt(7)
 
 	event.recipes.tfc.barrel_sealed(8000)
 		.inputs('#tfg:stone_dusts', TFC.fluidStackIngredient('tfc:limewater', 25))
@@ -172,8 +172,8 @@ const registerTFCRecipes = (event) => {
 		.itemInputs('#tfg:stone_dusts')
 		.inputFluids(Fluid.of('tfc:limewater', 25))
 		.itemOutputs('tfc:mortar')
-		.duration(30)
-		.EUt(8);
+		.duration(600)
+		.EUt(7);
 
 	// Jar lids
 
@@ -332,18 +332,6 @@ const registerTFCRecipes = (event) => {
         ]
     ).id('tfg:glassworking/lamp_glass')
 
-	event.recipes.gtceu.macerator('tfg:candle')
-		.itemInputs("#minecraft:candles")
-		.itemOutputs("gtceu:small_wax_dust")
-		.duration(50)
-		.EUt(2)
-		.category(GTRecipeCategories.MACERATOR_RECYCLING);
-	
-	event.recipes.tfc.quern("gtceu:small_wax_dust", "#minecraft:candles")
-		.id("tfg:quern/candles")
-	event.recipes.tfc.quern("gtceu:tiny_wax_dust", "gtceu:wax_nugget")
-		.id("tfg:quern/wax_nugget")
-
 	// Hot item cooling
 	event.recipes.tfc.barrel_instant()
 		.inputItem(TFC.ingredient.heatable(1, null))
@@ -365,4 +353,84 @@ const registerTFCRecipes = (event) => {
 		.outputItem(TFC.isp.copyInput().addHeat(-5))
 		.sound('minecraft:block.fire.extinguish')
 		.id('tfg:barrel/waters_cooling')
+
+	// Devices
+	event.shaped('tfc:anemometer', [
+		' A ',
+		'ABA',
+		' A '
+	], {
+		A: '#forge:rods/brass',
+		B: '#forge:small_gears/brass'
+	}).id('tfg:shaped/anemometer')
+
+	event.recipes.tfc.heating('tfc:anemometer', 930)
+		.resultFluid(Fluid.of('gtceu:brass', 144 * 3))
+		.id('tfg:heating/anemometer')
+
+	TFGHelpers.registerMaterialInfo('tfc:anemometer', [GTMaterials.Brass, 3])
+
+	event.shaped('tfc:calendar_clock', [
+		' G ',
+		'BCS',
+		' D '
+	], {
+		C: 'minecraft:clock',
+		B: '#forge:small_gears/brass',
+		S: '#forge:small_springs',
+		G: '#forge:glass_panes',
+		D: '#forge:tools/screwdrivers'
+	}).id('tfg:shaped/calendar_clock')
+
+	event.recipes.gtceu.assembler('tfc:calendar_clock')
+		.itemInputs('minecraft:clock', '#forge:small_gears/brass', '#forge:small_springs', '#forge:glass_panes')
+		.itemOutputs('tfc:calendar_clock')
+		.EUt(GTValues.VA[GTValues.ULV])
+		.duration(100)
+		
+	event.recipes.tfc.heating('tfc:calendar_clock', 930)
+		.resultFluid(Fluid.of('gtceu:brass', 144 * 3))
+		.id('tfg:heating/calendar_clock')
+
+	TFGHelpers.registerMaterialInfo('tfc:calendar_clock', [GTMaterials.Brass, 3, GTMaterials.Redstone, 1])
+
+	event.shaped('tfc:thermometer', [
+		' B ',
+		' S '
+	], {
+		B: TFC.ingredient.fluid('gtceu:glass_vial', TFC.fluidStackIngredient('gtceu:mercury', 1000)),
+		S: '#forge:plates/brass'
+	}).id('tfg:shaped/thermometer')
+
+	TFGHelpers.registerMaterialInfo('tfc:thermometer', [GTMaterials.Brass, 1, GTMaterials.Redstone, 1, GTMaterials.Glass, 1/4])
+
+	event.shaped('tfc:vane', [
+		' S ',
+		'WBW',
+		' W '
+	], {
+		B: '#forge:small_gears/brass',
+		S: '#forge:plates/wrought_iron',
+		W: '#forge:rods/wrought_iron'
+	}).id('tfg:shaped/vane_wrought')
+
+	event.shaped('tfc:vane', [
+		' S ',
+		'WBW',
+		' W '
+	], {
+		B: '#forge:small_gears/brass',
+		S: '#forge:plates/iron',
+		W: '#forge:rods/iron'
+	}).id('tfg:shaped/vane_cast')
+
+	event.shaped('tfc:vane', [
+		' S ',
+		'WBW',
+		' W '
+	], {
+		B: '#forge:small_gears/brass',
+		S: '#forge:plates/lead',
+		W: '#forge:rods/lead'
+	}).id('tfg:shaped/vane_lead')
 }

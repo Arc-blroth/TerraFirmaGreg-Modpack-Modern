@@ -1,0 +1,28 @@
+{
+    "name": "ミキシングボウル",
+    "category": "tfg:cooking",
+    "icon": "firmalife:mixing_bowl",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "ミキシングボウルは、アイテムや液体をスムーズに混ぜ合わせるための道具です。ミキシングボウルを使用するには、$(item)$(k:key.use)$()で$(thing)スプーン$()を入れる必要があります。スプーンはボウルの中に残ったままとなり、耐久力は低下しません。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "ミキシングボウルを使用するには、材料を入れ、$(item)$(k:key.use)$() を押して混ぜ始めます。ミキシングボウルには、最大 $(6)5 個のアイテム$() と $(3)1 個の液体$() を投入できます。レシピを実行するには、$(n)正確な量$() のアイテムが必要です。レシピの結果として液体が出力される場合、余分な液体は破棄されますので、ご注意ください！"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "関連項目",
+            "anchor": "relations",
+            "entries": [
+                "tfg:cooking/decay",
+                "tfg:cooking/bread",
+                "tfg:cooking/cooking_methods",
+                "tfg:agriculture/beekeeping"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 13
+}

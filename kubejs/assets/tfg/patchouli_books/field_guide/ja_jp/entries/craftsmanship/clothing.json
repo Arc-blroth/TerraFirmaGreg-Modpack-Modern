@@ -1,0 +1,491 @@
+{
+	"name": "衣類",
+	"category": "tfg:craftsmanship",
+	"icon": "tfc_textile:cotton_shirt",
+	"read_by_default": true,
+	"sortnum": 19,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(item)衣類$() は、$(l:game_mechanics/damage_types)防御力$() 以外の効果をもたらす $(thing)装備$() の一種です。$(br2)ほとんどの衣服は $(l:game_mechanics/player_temperature)プレイヤーの体温$() に影響を与えますが、その他にも有用な追加効果をもたらすものがあります。"
+		},
+		{
+			"type": "patchouli:text",
+			"anchor": "index",
+			"text": "$(li)$(bold)$(l:craftsmanship/clothing#curios)Curiosとは$()$(li)$(bold)最初期の衣類$()$(li2)$(l:craftsmanship/clothing#straw_hat)麦わら帽子$()$(li2)$(l:craftsmanship/clothing#primitive)原始的な衣類$()$(li2)$(l:craftsmanship/clothing#insulated_leather)革$()$(li)$(bold)高度な衣類$()$(li2)$(l:craftsmanship/clothing#cloth)布の衣類$()$(li2)$(l:craftsmanship/clothing#hides)動物の皮$()$(li2)$(l:craftsmanship/clothing#fully_insulated)完全断熱$()$(li)$(bold)$(l:craftsmanship/clothing#table)衣類の性能表$()$(li)$(bold)その他の衣類$()$(li2)$(l:logistics/exploration_gear#snowshoes)スノーシュー$()$(li2)$(l:logistics/exploration_gear#snorkel)シュノーケル$()と $(l:logistics/exploration_gear#flippers)足ひれ$()$(li2)$(l:game_mechanics/hazards#mask)フェイスマスク$()$(li2)$(l:game_mechanics/hazards#gloves)ゴム手袋$()$(li)$(bold)$(l:craftsmanship/clothing#armor_trim)衣類の装飾$()"
+		},
+		{
+			"type": "patchouli:image",
+			"title": "Curiosとは?",
+			"anchor": "curios",
+			"images": [
+				"tfg:textures/gui/field_guide/curios.png"
+			],
+			"border": true,
+			"text": "キャラクターポートレートの左上にある円形のボタンをクリックして、メニューを開きます。"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "衣類は通常の装備スロットに装備できますが、$(thing)Curiosスロット$()に装備することで、他の装備と同時に着用することも可能です。$(br2)このメニューには、$(l:logistics/personal_storage#backpack)バックパック$()や$(l:logistics/personal_storage#tool_belt)ツールベルト$()などを装備するためのスロットも用意されています。"
+		},
+		{
+			"type": "tfg:knapping_recipe",
+			"recipe": "sns:straw_knapping/straw_hat",
+			"anchor": "straw_hat",
+			"title": "麦わら帽子",
+			"text": "最初にクラフトできる服は、$(l:craftsmanship/building_materials#thatch)藁$()で作られたシンプルな$(item)麦わら帽子$()です。これは、$(l:game_mechanics/player_temperature#wetness)直射日光$()から身を守ってくれます。"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"title": "原始的な衣類",
+			"anchor": "primitive",
+			"item": "tfc_textile:raw_hat,tfc_textile:raw_shirt,tfc_textile:raw_pants,tfc_textile:raw_socks",
+			"text": "極地で裸のまま凍えそう？ $(item)原始的$() な衣類は、$(l:craftsmanship/building_materials#thatch)藁$() と $(item)生皮$() を少し用意するだけで、とても簡単に作れます。原始人風のスタイルにぴったりです！$(br2)原始的な衣類は、暖かさ、断熱性、耐久性が非常に低いですが、もっと良いものを見つけるまでの時間を稼ぐには十分でしょう。"
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "tfg:shapeless/primitive_insulation_small",
+			"recipe2": "tfg:shapeless/primitive_insulation_large",
+			"title": " "
+		},
+		{
+			"type": "tfg:knapping_recipe",
+			"recipe": "tfg:knapping/raw_hat",
+			"text": "$(l:craftsmanship/sticks_and_stones#knapping)生皮加工$()による$(item)原始的な帽子$()の作成。"
+		},
+		{
+			"type": "tfg:knapping_recipe",
+			"recipe": "tfg:knapping/raw_shirt",
+			"text": "生皮加工による$(item)原始的なシャツ$()の作成。"
+		},
+		{
+			"type": "tfg:knapping_recipe",
+			"recipe": "tfg:knapping/raw_pants",
+			"text": "生皮加工による$(item)原始的なズボン$()の作成。"
+		},
+		{
+			"type": "tfg:knapping_recipe",
+			"recipe": "tfg:knapping/raw_socks",
+			"text": "生皮加工による$(item)原始的な靴下$()の作成。"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"anchor": "insulated_leather",
+			"title": "断熱レザー",
+			"item": "tfcambiental:insulated_leather_hat,tfcambiental:insulated_leather_tunic,tfcambiental:insulated_leather_pants,tfcambiental:insulated_leather_boots",
+			"text": "$(item)断熱レザー$()の服は、原始人コスプレの次のステップとなるアイテムです。必要なのは、$(l:agriculture/leather_making)革$()製の防具に加え、$(l:agriculture/animal_husbandry#wooly_animals)生の羊毛$()か、$(l:agriculture/animal_husbandry#oviparous_animals)羽毛$()のいずれかだけです。"
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "tfg:shaped/insulated_leather_hat",
+			"recipe2": "tfg:shaped/insulated_leather_tunic",
+			"title": " "
+		},
+		{
+			"type": "tfg:knapping_recipe",
+			"recipe": "tfg:knapping/leather_apron",
+			"text": "$(l:agriculture/leather_making)革$()で作られた $(item)エプロン$() は、断熱性は高いものの、保温性や冷却効果はありません。$(l:craftsmanship/charcoal_forge)鍛冶場$()での作業に最適です！"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"title": "布の衣類",
+			"anchor": "cloth",
+			"item": "tag:forge:cloth",
+			"text": "より強力で長期的な保護を求めるなら、さまざまな $(l:agriculture/weaving)布$() を使って、きちんとした服を作ることを検討するとよいでしょう。$(l:agriculture/animal_husbandry#wooly_animals)羊毛$() や $(l:beneath/beneath_crops#cotton) 綿$()の服は体を温めてくれますが、$(l:the_world/wild_crops#flax)リネン$()、$(l:the_world/wild_crops#jute)麻布$()、および $(l:beneath/beneath#webbed_lair)絹$() で作られた服は体を冷やしてくれます。$(br)これらは初期投資は大きくなりますが、耐久性がはるかに高く、安価に修理することができます。"
+		},
+		{
+			"type": "patchouli:crafting",
+			"title": " ",
+			"recipe": "tfg:shaped/cotton_shirt",
+			"recipe2": "tfg:shaped/burlap_pants"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "tag:tfc_textile:animal_furs",
+			"anchor": "hides",
+			"title": "動物の皮",
+			"text": "さまざまな動物の皮や毛皮を使えば、$(tfg_short)で最も頑丈な防具を作ることができ、他のどの防具よりも優れたステータスと耐久性を誇ります。これらの防具は、入手の難易度や、その動物が生息する場所によって、ステータスがそれぞれ異なります。"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "たとえば、$(l:the_world/wild_animals#crocodile)ワニの服$()を着れば涼しくなりますが、$(l:the_world/wild_animals#caribou)トナカイのシャツ$()なら、とても暖かく過ごせます。$(br2)最も冷却効果の高い服を手に入れるには、$(l:beneath/beneath_mechanics#clothes)かなり暑い場所$()へ出かける必要があります……$(br2)また、これらの服はすべて簡単に修理することもできます。"
+		},
+		{
+			"type": "patchouli:crafting",
+			"title": " ",
+			"recipe": "tfg:shaped/caribou_shirt",
+			"recipe2": "tfg:shaped/crocodile_shirt"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"anchor": "fully_insulated",
+			"title": "完全な断熱",
+			"item": "gtceu:nanomuscle_chestplate,ad_astra:space_suit",
+			"text": "最後に、一部の高度な防具は、外界からの$(thing)完全な断熱$()効果も発揮し、$(l:game_mechanics/player_temperature)プレイヤーの体温$()が5°Cを下回ったり、25°Cを上回ったりするのを防ぎます。"
+		},
+		{
+			"type": "tfg:table",
+			"anchor": "table",
+			"strings": [
+				{
+					"text": "衣服の種類",
+					"bold": true
+				},
+				{
+					"text": "耐久性",
+					"bold": true
+				},
+				{
+					"text": "温度",
+					"bold": true
+				},
+				{
+					"text": "断熱性",
+					"bold": true
+				},
+				{
+					"text": "麦わら帽子"
+				},
+				{
+					"text": "低"
+				},
+				{
+					"text": "-2°C"
+				},
+				{
+					"text": "+3"
+				},
+				{
+					"text": "原始的な衣類"
+				},
+				{
+					"text": "低"
+				},
+				{
+					"text": "+2°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "断熱レザー"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "+2°C"
+				},
+				{
+					"text": "+10"
+				},
+				{
+					"text": "革のエプロン"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "+0°C"
+				},
+				{
+					"text": "+20"
+				},
+				{
+					"text": "麻布"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "-2°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "リネン"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "-2°C"
+				},
+				{
+					"text": "+3"
+				},
+				{
+					"text": "羊毛"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "+4°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "綿"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "+4°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "絹"
+				},
+				{
+					"text": "最高"
+				},
+				{
+					"text": "-2°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "ファントムの布"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "-8°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "アカゲジカ"
+				},
+				{
+					"text": "最高"
+				},
+				{
+					"text": "-8°C"
+				},
+				{
+					"text": "+20"
+				}
+			],
+			"title": "衣類の統計情報",
+			"legend": [],
+			"columns": 3,
+			"first_column_width": 80,
+			"column_width": 50,
+			"row_height": 9,
+			"left_buffer": 2,
+			"top_buffer": 20,
+			"draw_background": false
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(br2)$(br2)$(br2)$(br2)$(br2)$(br2)$(br2)$(br2)$(o)次のページに続く……$()"
+		},
+		{
+			"type": "tfg:table",
+			"anchor": "table",
+			"strings": [
+				{
+					"text": "衣服の種類",
+					"bold": true
+				},
+				{
+					"text": "耐久性",
+					"bold": true
+				},
+				{
+					"text": "温度",
+					"bold": true
+				},
+				{
+					"text": "断熱性",
+					"bold": true
+				},
+				{
+					"text": "ダイアウルフ"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "ヒョウ"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "ピューマ"
+				},
+				{
+					"text": "中"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+5"
+				},
+				{
+					"text": "トラ"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "-4°C"
+				},
+				{
+					"text": "+10"
+				},
+				{
+					"text": "ワニ"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "-4°C"
+				},
+				{
+					"text": "+10"
+				},
+				{
+					"text": "ライオン"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "-4°C"
+				},
+				{
+					"text": "+10"
+				},
+				{
+					"text": "アメリカグマ"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+10"
+				},
+				{
+					"text": "ハイイログマ"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+10"
+				},
+				{
+					"text": "トナカイ"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+20"
+				},
+				{
+					"text": "サーベルタイガー"
+				},
+				{
+					"text": "高"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+20"
+				},
+				{
+					"text": "シロクマ"
+				},
+				{
+					"text": "最高"
+				},
+				{
+					"text": "+8°C"
+				},
+				{
+					"text": "+20"
+				}
+			],
+			"legend": [],
+			"title": "服装の統計（続き）",
+			"columns": 3,
+			"first_column_width": 80,
+			"column_width": 50,
+			"row_height": 9,
+			"left_buffer": 2,
+			"top_buffer": 20,
+			"draw_background": false
+		},
+		{
+			"type": "patchouli:empty",
+			"draw_filler": false
+		},
+		{
+			"title": "防具の装飾",
+			"item": "tag:minecraft:trim_templates",
+			"type": "patchouli:spotlight",
+			"anchor": "armor_trim",
+			"text": "服がちょっと地味すぎると思いませんか？$(br2)鎧と同じように、$(l:craftsmanship/sewing_table#armor_trim)アーマートリム$()は、ほとんどの服にも装着できます。"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "関連項目",
+			"anchor": "relations",
+			"entries": [
+				"tfg:agriculture/leather_making",
+				"tfg:agriculture/weaving",
+				"tfg:game_mechanics/player_temperature",
+				"tfg:craftsmanship/sewing_table",
+				"tfg:the_world/wild_animals",
+				"tfg:the_world/wild_crops",
+				"tfg:the_world/climate",
+				"tfg:logistics/exploration_gear",
+				"tfg:beneath/beneath",
+				"tfg:beneath/beneath_crops"
+			]
+		}
+	],
+	"extra_recipe_mappings": {
+		"tag:curios:clothes_hat": 0,
+		"tag:curios:clothes_torso": 0,
+		"tag:curios:clothes_pants": 0,
+		"tag:curios:clothes_socks": 0
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "name": "サラダ作り",
+    "category": "tfg:cooking",
+    "icon": "tfc:textures/item/food/protein_salad.png",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "anchor": "salad",
+            "text": "$(thing)サラダ$()は、最大5つの$(thing)$(n)$(t:#tfc:usable_in_salad)食材$()を$(thing)ボウル$()に入れて作る料理です。$(br2)サラダは最も簡単に作れる料理の一つで、必要なのは$(l:cooking/bowls)ボウル$()だけです。まず、$(thing)ボウル$()を手に持ち、$(item)$(k:key.sneak)$()を押したまま$(item)$(k:key.use)$()を押します。これにより、サラダ画面が開きます。$(br)上部のスロットに食材を配置し、準備ができたら下部のスロットからサラダを取り出してください。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tag:tfc:salads",
+            "title": "サラダ",
+            "link_recipes": false,
+            "text": "サラダは動的な料理です。使用する食材によって、どのような種類のサラダになるか、そしてそこに含まれる $(l:cooking/food_and_water#nutrients)栄養素$()が決まります。$(br2)$(t:§70.75§r§l∑§r§7Ingredients§r)栄養価を算出するには、各食材の栄養価を合計し、0.75を掛けます。"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "関連項目",
+            "anchor": "relations",
+            "entries": [
+                "tfg:cooking/food_and_water",
+                "tfg:cooking/sandwiches",
+                "tfg:the_world/wild_crops",
+                "tfg:the_world/wild_fruits",
+                "tfg:the_world/wild_animals"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 10,
+    "extra_recipe_mappings": {
+        "tfc:food/fruit_salad": 0,
+        "tfc:food/dairy_salad": 0,
+        "tfc:food/vegetables_salad": 0,
+        "tfc:food/protein_salad": 0,
+        "tfc:food/grain_salad": 0
+    }
+}

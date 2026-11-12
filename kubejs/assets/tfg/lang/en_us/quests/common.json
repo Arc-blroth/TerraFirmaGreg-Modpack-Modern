@@ -1,0 +1,18 @@
+{
+    "quests.tasktype.checkmark": "Click here to complete this quest/task",
+    "quests.tasktype.item.any": "Any of this item:",
+    "quests.tasktype.lookat": "Look at a:",
+    "quests.tasktype.travelto": "Travel to:",
+
+    "quests.groups.primitive": "Primitive Age",
+    "quests.groups.voltaic_age": "Voltaic Age",
+    "quests.groups.space_age": "Space Age",
+    "quests.groups.interstellar": "Interstellar Age",
+    "quests.groups.technological_help": "Technological Help",
+    "quests.groups.tips": "Tips",
+
+    "quests.player_completed_quest": "&e%s&r has completed the quest: ",
+    "quests.team_completed_quest": "&e%s&7 [%s]&r has completed the quest: ",
+    "quests.player_completed_chapter": "&e%s&r has completed the quest chapter: ",
+    "quests.team_completed_chapter": "&e%s&7 [%s]&r has completed the quest chapter: "
+}

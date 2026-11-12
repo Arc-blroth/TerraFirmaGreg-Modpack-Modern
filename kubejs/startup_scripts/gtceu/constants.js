@@ -69,6 +69,9 @@ global.TFG_EXTRUDER_MOLDS = /** @type {const} */ ([
 	"tfg:screwdriver_tip_extruder_mold",
 	"tfg:wrench_tip_extruder_mold",
 	"tfg:wire_cutter_head_extruder_mold",
+	"tfg:drill_head_extruder_mold",
+	"tfg:chainsaw_head_extruder_mold",
+	"tfg:buzzsaw_blade_extruder_mold",
 	"tfg:small_casing_extruder_mold",
 	"tfg:shell_casing_extruder_mold",
 	"tfg:large_casing_extruder_mold"
@@ -185,9 +188,6 @@ global.ADD_CIRCUIT = /** @type {const} */ ([
 
 	{ recipeId: "gtceu:chemical_reactor/acetic_acid_from_methanol", circuitNumber: 1 },
 	{ recipeId: "gtceu:large_chemical_reactor/acetic_acid_from_methanol", circuitNumber: 1 },
-
-	{ recipeId: "gtceu:chemical_reactor/butyraldehyde", circuitNumber: 5 },
-	{ recipeId: "gtceu:large_chemical_reactor/butyraldehyde", circuitNumber: 5 },
 
 	{ recipeId: "gtceu:chemical_reactor/saltpeter", circuitNumber: 2 },
 	{ recipeId: "gtceu:large_chemical_reactor/saltpeter", circuitNumber: 2 },

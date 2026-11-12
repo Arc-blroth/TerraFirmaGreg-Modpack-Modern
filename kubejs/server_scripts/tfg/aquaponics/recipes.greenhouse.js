@@ -443,15 +443,15 @@ const registerTFGGreenhouseRecipes = (event) => {
 
 	// Cultivation Monitor
 	event.recipes.gtceu.shaped('tfg:cultivation_monitor', [
-		'CEC',
+		'CAC',
 		'DBD',
-		'CAC'
+		'CEC'
 	], {
 		A: 'gtceu:ev_scanner',
 		B: 'gtceu:computer_monitor_cover',
 		C: ChemicalHelper.get(TagPrefix.plateDense, GTMaterials.TungstenSteel, 1),
 		D: '#gtceu:circuits/luv',
-		E: '#forge:lenses/emerald'
+		E: 'gtceu:glass_lens'
 	}).addMaterialInfo().id('tfg:shaped/cultivation_monitor');
 	
 	// Hydroponics Facility Controller
@@ -595,7 +595,7 @@ const registerTFGGreenhouseRecipes = (event) => {
 
 	// Moon Plants
 	generateGreenHouseRecipe(event, 'ad_astra:moon', '16x tfg:lunar_chorus_flower', [
-		'64x minecraft:chorus_fruit', '8x minecraft:chorus_fruit', '4x tfg:lunar_chorus_flower', '4x tfg:lunar_chorus_flower'
+		'64x minecraft:chorus_fruit', '8x minecraft:chorus_fruit', '16x tfg:lunar_chorus_flower', '16x tfg:lunar_chorus_flower'
 	], 1, 1);
 	generateGreenHouseRecipe(event, 'ad_astra:moon', '8x minecraft:twisting_vines', [
 		'16x minecraft:twisting_vines', '8x minecraft:pearlescent_froglight', '8x minecraft:verdant_froglight', '8x minecraft:ochre_froglight'

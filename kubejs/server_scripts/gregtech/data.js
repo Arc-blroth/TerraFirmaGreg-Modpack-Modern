@@ -30,9 +30,12 @@ const registerGTCEUHeats = (event) => {
 		let tfcProperty = material.getProperty(TFGPropertyKey.TFC_PROPERTY)
 
 		if (tfcProperty !== null) {
-			makeItemHeatByTagPrefix(TagPrefix.dustTiny, material, tfcProperty, 0.357)
-			makeItemHeatByTagPrefix(TagPrefix.dustSmall, material, tfcProperty, 0.714)
-			makeItemHeatByTagPrefix(TagPrefix.dust, material, tfcProperty, 1.429)
+			// Dusts should only be meltable for normal tfc materials
+			if (tfcProperty.getTier() <= 6) {
+				makeItemHeatByTagPrefix(TagPrefix.dustTiny, material, tfcProperty, 0.357)
+				makeItemHeatByTagPrefix(TagPrefix.dustSmall, material, tfcProperty, 0.714)
+				makeItemHeatByTagPrefix(TagPrefix.dust, material, tfcProperty, 1.429)
+			}
 			makeItemHeatByTagPrefix(TagPrefix.rod, material, tfcProperty, 0.567)
 			makeItemHeatByTagPrefix(TagPrefix.bolt, material, tfcProperty, 0.245)
 			makeItemHeatByTagPrefix(TagPrefix.screw, material, tfcProperty, 0.567)
@@ -65,6 +68,7 @@ const registerGTCEUHeats = (event) => {
 			makeItemHeatByTagPrefix(TagPrefix.toolHeadBuzzSaw, material, tfcProperty, 2.875)
 			makeItemHeatByTagPrefix(TagPrefix.toolHeadScrewdriver, material, tfcProperty, 1.429)
 			makeItemHeatByTagPrefix(TagPrefix.toolHeadWireCutter, material, tfcProperty, 1.429)
+			makeItemHeatByTagPrefix(TagPrefix.toolHeadDrill, material, tfcProperty, 1.429 * 9)
 			makeItemHeatByTagPrefix(TFGTagPrefix.toolHeadSword, material, tfcProperty, 2.875)
 			makeItemHeatByTagPrefix(TFGTagPrefix.toolHeadShovel, material, tfcProperty, 1.429)
 			makeItemHeatByTagPrefix(TFGTagPrefix.toolHeadScythe, material, tfcProperty, 1.429)
@@ -128,6 +132,9 @@ const registerGTCEUMetals = (event) => {
 	event.metal('gtceu:gold', 1060, 0.005, '#forge:ingots/gold', '#forge:double_ingots/gold', '#forge:plates/gold', 1, 'tfc:gold')
 	event.metal('gtceu:nickel', 1453, 0.00625, '#forge:ingots/nickel', '#forge:double_ingots/nickel', '#forge:plates/nickel', 1, 'tfc:nickel')
 	event.metal('gtceu:brass', 930, 0.00857, '#forge:ingots/brass', '#forge:double_ingots/brass', '#forge:plates/brass', 2, 'tfc:brass')
+	event.metal('gtceu:electrum', 1010, 0.00562, '#forge:ingots/electrum', '#forge:double_ingots/electrum', '#forge:plates/electrum', 1, 'tfg:electrum')
+	event.metal('gtceu:battery_alloy', 330, 0.01729, '#forge:ingots/battery_alloy', '#forge:double_ingots/battery_alloy', '#forge:plates/battery_alloy', 1, 'tfg:battery_alloy')
+	event.metal('gtceu:cupronickel', 1266, 0.00741, '#forge:ingots/cupronickel', '#forge:double_ingots/cupronickel', '#forge:plates/cupronickel', 1, 'tfg:cupronickel')
 
 	event.metal('gtceu:redstone', 460, 0.01729, null, null, null, 1, 'tfg:redstone')
 	event.metal('gtceu:red_alloy', 740, 0.01529, '#forge:ingots/red_alloy', '#forge:double_ingots/red_alloy', '#forge:plates/red_alloy', 2, 'tfg:red_alloy')
@@ -138,11 +145,21 @@ const registerGTCEUMetals = (event) => {
 	event.metal('gtceu:cobalt', 1495, 0.00857, '#forge:ingots/cobalt', '#forge:double_ingots/cobalt', '#forge:plates/cobalt', 3, 'tfg:cobalt')
 	event.metal('gtceu:cobalt_brass', 1060, 0.00857, '#forge:ingots/cobalt_brass', '#forge:double_ingots/cobalt_brass', '#forge:plates/cobalt_brass', 3, 'tfg:cobalt_brass')
 	event.metal('gtceu:aluminium_silicate', 1540, 0.00857, '#forge:ingots/aluminium_silicate', null, null, 3, 'tfg:aluminium_silicate')
+	event.metal('gtceu:mercury', -38, 0.02143, null, null, null, 0, 'tfg:mercury')
+
+	event.metal('gtceu:vanadium_steel', 2073, 0.00857, '#forge:ingots/vanadium_steel', '#forge:double_ingots/vanadium_steel', '#forge:plates/vanadium_steel', 7, 'tfg:vanadium_steel')
+	event.metal('gtceu:ultimet', 1980, 0.005, '#forge:ingots/ultimet', '#forge:double_ingots/ultimet', '#forge:plates/ultimet', 8, 'tfg:ultimet')
+	event.metal('tfg:boron_carbide', 3041, 0.005, '#forge:ingots/boron_carbide', '#forge:double_ingots/boron_carbide', '#forge:plates/boron_carbide', 8, 'tfg:boron_carbide')
+	event.metal('gtceu:tungsten_carbide', 3058, 0.005, '#forge:ingots/tungsten_carbide', '#forge:double_ingots/tungsten_carbide', '#forge:plates/tungsten_carbide', 9, 'tfg:tungsten_carbide')
+	event.metal('gtceu:ostrum_iodide', 3700, 0.005, '#forge:ingots/ostrum_iodide', '#forge:double_ingots/ostrum_iodide', '#forge:plates/ostrum_iodide', 9, 'tfg:ostrum_iodide')
+
+	event.metal('gtceu:wax', 60, 0.02143, '#forge:ingots/wax', null, null, 0, 'tfg:wax')
+	event.metal('tfg:jellie_milk', -1, 0.02143, null, null, null, 0, 'tfg:jellie_milk')
+	event.metal('tfc:spring_water', -1, 0.02143, null, null, null, 0, 'tfg:spring_water')
 }
 
 function registerGTCEUBedrockFluidVeins(event) {
 	registerTFGMoonBedrockFluidVeins(event)
 	registerTFGMarsBedrockFluidVeins(event)
 	registerTFGVenusBedrockFluidVeins(event)
-
 }

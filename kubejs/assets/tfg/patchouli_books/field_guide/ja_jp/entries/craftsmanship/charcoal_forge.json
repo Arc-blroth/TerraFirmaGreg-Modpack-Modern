@@ -1,0 +1,134 @@
+{
+    "name": "炉とふいご",
+    "category": "tfg:craftsmanship",
+    "icon": "tfc:textures/block/molten_lit.png",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "anchor": "charcoal_forge",
+            "text": "$(thing)木炭炉$()は、金属、陶器、レンガなどのアイテムを$(l:game_mechanics/heating)加熱$()したり、溶かしたりするために使用される装置です。$(br)また、炉は、$(l:craftsmanship/crucible)るつぼ$()を機能させるためにも必要です。$(br)5つの $(thing)石$()ブロック（丸石、未加工の石、レンガなど）で、7層または8層の $(l:craftsmanship/charcoal_pit#charcoal_pile)木炭の山$()を囲むように構築し、火をつければ炉が完成します。"
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        " B ",
+                        "C0C",
+                        " B "
+                    ],
+                    [
+                        "   ",
+                        " R ",
+                        "   "
+                    ]
+                ],
+                "mapping": {
+                    "0": "tfc:charcoal_pile[layers=7]",
+                    "C": "tfc:rock/cobble/gabbro",
+                    "R": "tfc:rock/raw/gabbro",
+                    "B": "tfc:rock/bricks/gabbro"
+                }
+            },
+            "name": "炉",
+            "text": "点火準備が整った、完成した炉の構造。",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:text",
+            "text": "炉が機能するには煙道が必要です。炉の真上にあるブロックは空気、または$(l:craftsmanship/crucible)るつぼ$()でなければなりません。そして、真上、または近くの8つのエリアの1つが$(italic)空と通じている必要があります！$()$(br2)$(l:craftsmanship/charcoal_forge#bellows)ふいご$()を炉の1ブロック上、かつ隣接する位置に設置することで、炉が到達できる最高温度を上げることができます。ただし、これは厳密には必須ではありません。"
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "  G  ",
+                        "  G  ",
+                        "GGCGG",
+                        "  B  ",
+                        "  G  "
+                    ],
+                    [
+                        "XYXYX",
+                        "YXYXY",
+                        "XY0YX",
+                        "YXYXY",
+                        "XYXYX"
+                    ]
+                ],
+                "mapping": {
+                    "0": "tfc:charcoal_forge[heat_level=7]",
+                    "X": "tfc:rock/smooth/gabbro",
+                    "Y": "tfc:rock/smooth/dacite",
+                    "G": "minecraft:light_blue_stained_glass",
+                    "C": "tfc:crucible",
+                    "B": "tfc:bellows[facing=west]"
+                }
+            },
+            "name": "煙道図",
+            "text": "有効な煙道として認められるためには、青いステンドグラスで示された場所のうちいずれか1つが、空に直接通じており、かつ炉へのアクセスが可能でなければなりません。",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:image",
+            "images": [
+                "tfc:textures/gui/book/gui/charcoal_forge.png"
+            ],
+            "title": "炉のGUI。",
+            "text": "$(bold)ヒント：$() $(item)$(k:key.drop)$() で、炉の上に炭などの燃料を直接投げ入れて、燃料を補充することができます。",
+            "border": false
+        },
+        {
+            "type": "patchouli:text",
+            "text": "炉の下部にある5つのスロットは燃料用です。炉が作動している間、定期的に $(t:#tfc:forge_fuels)$(6)燃料$()を消費します。燃料としては、$(thing)木炭、石炭、コークス、または泥炭ブリケット$()が使用可能です。上部の5つのスロットでは、左側のインジケーターに表示されている温度までアイテムを加熱します。右側のスロットは、$(l:craftsmanship/pottery#vessel)壺$()や$(l:craftsmanship/pottery#mold)鋳型$()など、溶けた金属を収容できる容器用です。炉内で溶けたアイテムは、これらの容器に入ります。入る先が無い場合、溶けた液体は$(bold)破棄$()されます。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tfc:bellows",
+            "title": "ふいご",
+            "anchor": "bellows",
+            "text": "$(thing)ふいご$()は、酸素の供給を促進することで、装置の温度を上げるために使用できます。ただし、より高温で燃焼させることで、燃料の消費も早くなります。ふいごは、その目の前と、その1ブロック下のブロックに空気を供給することができます。これにより、例えば $(l:craftsmanship/blast_furnace)高炉$() や $(l:craftsmanship/charcoal_forge#charcoal_forge)木炭炉$() などに空気を供給することが可能です。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "ふいごを使用するには、対象の加熱装置に向けて設置し、$(item)$(k:key.use)$() を実行するだけです。ふいごが装置内に空気を送り込み、短時間だけ最高温度を上昇させます。ふいごは、例えば $(item)シャフト$() を使用して背面に <16RPM の $(thing)回転動力$() を供給することなどで、自動化することができます。この場合、手動での使用は無効になります。機械的な動力のオン／オフを切り替えるには、$(item)クラッチ$()の使用を検討してください。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "ふいごを1回押すと、200ティック分の空気が供給されます。ただし、ほとんどのデバイスでは、一度に最大600ティック分の酸素供給分を蓄えておくことができます。$(br2)残りの空気量にかかわらず燃料消費量が2倍になるため、ふいごを多用しても追加のペナルティは発生しません。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "automation",
+            "title": "自動化のヒント",
+            "text": "$(li)炉では、側面に落とされた燃料が自動的に回収されます。（$(item)$(k:key.drop)$() を押す、$(item)ドロッパー$()、$(item)ディスペンサー$()、または $(item)ファンネル$() を使用してください。）$(li)$(item)メカニカルアーム$()も、炉に燃料を供給し続けることができます。$(li)$(item)デポ$()は、$(item)鉢$()を自動化したい場合、炉の断熱材として機能します。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "もっと印象的なものを探している方、あるいは鍛冶場を屋内に持ち込みたい方は、$(l:beneath/beneath_mechanics#hellforge)獄炎炉$()をぜひチェックしてみてください！"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "関連項目",
+            "anchor": "relations",
+            "entries": [
+                "tfg:agriculture/leather_making",
+                "tfg:craftsmanship/pit_kiln",
+                "tfg:craftsmanship/pottery",
+                "tfg:craftsmanship/crucible",
+                "tfg:craftsmanship/blast_furnace",
+                "tfg:craftsmanship/bloomery",
+                "tfg:craftsmanship/metallurgy",
+                "tfg:craftsmanship/glassworking",
+                "tfg:craftsmanship/charcoal_pit",
+                "tfg:game_mechanics/heating"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 6,
+    "extra_recipe_mappings": {
+        "tfc:bellows": 7
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "name": "釣魚",
+    "category": "tfg:agriculture",
+    "icon": "tfc:metal/fishing_rod/copper",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "anchor": "intro",
+            "text": "$(thing)釣魚$()用來獵捕河流、湖泊和海洋中的魚。釣竿必須裝上魚餌再拋出，魚會試著吃餌，有時會得逞。收線拉魚需要花點功夫，魚鉤等級越高越輕鬆。"
+        },
+        {
+            "type": "tfg:anvil_recipe",
+            "recipe": "tfc:anvil/bismuth_bronze_fish_hook",
+            "text": "首先要在$(l:craftsmanship/anvils)砧$()上鍛造魚鉤。"
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "tfc:crafting/metal/fishing_rod/bismuth_bronze",
+            "title": "釣竿",
+            "text": "釣竿需要用魚鉤製作。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "沒有魚餌的釣竿派不上用場。可在工作台將$(t:#tfc:small_fishing_bait)$(6)魚餌$()裝到釣竿上。釣一般的魚需要$(thing)種子$()或$(thing)貝類$()；釣$(thing)海豚$()和$(thing)虎鯨$()等$(t:#tfc:large_fishing_bait)$(6)大型魚類$()，則需要$(item)鱈魚$()、$(item)鮭魚$()、$(item)熱帶魚$()或$(item)藍鰓太陽魚$()。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "按 $(item)$(k:key.use)$() 拋出浮標，等魚發現魚鉤咬餌後，再按 $(item)$(k:key.use)$() 收線，快捷欄上的量表會隨之填滿。收得太快，魚會帶著魚餌逃走。每次釣魚，魚都有機率吃掉魚餌。要抓住魚，必須把牠拉上岸用工具殺死，或用$(l:agriculture/fishing#fishing_net)漁網$()捕捉。把釣竿拿在副手會更方便。"
+        },
+        {
+            "type": "patchouli:image",
+            "images": [
+                "tfc:textures/gui/book/tutorial/fishing.png"
+            ],
+            "text": "釣魚時，釣魚條會取代經驗條。",
+            "border": true
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "fishing_net",
+            "title": "漁網",
+            "item": {
+                "tag": "forge:tools/fishing_nets"
+            },
+            "text": "厭倦了拿著魚叉追捕魚類？還是釣魚時總讓活蹦亂跳的漁獲溜走？做一張$(thing)漁網$()來撈晚餐吧。$(br)對魚類實體按 $(item)$(k:key.use)$() 即可將魚收進物品欄。不同等級的漁網效果相同，只差在耐久度。"
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "木製漁網",
+            "recipe": "tfc:kjs/damage/shaped/fishing_net/wood",
+            "text": "基本的$(item)木製漁網$()。"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "延伸閱讀",
+            "anchor": "relations",
+            "entries": [
+                "tfg:cooking/cooking_methods",
+                "tfg:cooking/decay",
+                "tfg:cooking/food_and_water",
+                "tfg:the_world/wild_animals",
+                "tfg:craftsmanship/anvils"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 7,
+    "extra_recipe_mappings": {
+        "tag:forge:fishing_rods": 0,
+        "tag:forge:tools/fishing_nets": 7
+    }
+}

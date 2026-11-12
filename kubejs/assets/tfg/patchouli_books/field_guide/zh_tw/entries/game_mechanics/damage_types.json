@@ -1,0 +1,53 @@
+{
+    "name": "傷害類型",
+    "category": "tfg:game_mechanics",
+    "icon": "tfc:metal/mace/blue_steel",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "anchor": "intro",
+            "text": "$(thing)物理傷害類型$()描述玩家與生物造成的傷害性質，共有三種：$(bold)穿刺$()、$(bold)劈砍$()和$(bold)鈍擊$()。有些實體能抵抗特定傷害類型，用某些方式難以甚至無法殺死。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "piercing",
+            "text": "$(thing)穿刺$()傷害來自$(thing)刀$()等尖銳武器、$(thing)箭矢$()和$(thing)標槍$()等投射物、$(thing)蜘蛛$()等有尖牙的怪物，以及$(thing)仙人掌$()。$(thing)骷髏$()對穿刺傷害免疫，$(thing)殭屍$()則稍微怕穿刺傷害。",
+            "title": "穿刺"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "slashing",
+            "text": "$(thing)劈砍傷害$()來自$(thing)斧頭$()和$(thing)劍$()等有長而鋒利刃口的武器，以及熊和美洲獅等大型$(l:the_world/wild_animals#predators)掠食者$()。$(thing)苦力怕$()容易受到劈砍傷害。",
+            "title": "劈砍"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "crushing",
+            "text": "$(thing)鈍擊$()傷害來自$(thing)錘子$()和$(thing)錘矛$()等鈍器。$(thing)殭屍$()會造成鈍擊傷害，對它也有些抗性。$(thing)苦力怕$()也能抵抗部分鈍擊傷害$()。$(thing)骷髏$()則容易受到鈍擊傷害。",
+            "title": "鈍擊"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "armor",
+            "title": "盔甲",
+            "text": "$(thing)盔甲$()有各自的傷害抗性，會隨品質提升，但同等級的盔甲之間也可能不同。青銅類中，$(thing)鉍青銅$()盔甲最能抵抗$(thing)鈍擊$()，$(thing)黑青銅$()最能抵抗$(thing)穿刺$()，一般$(thing)青銅$()則對各種傷害都有中等抵抗力。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "就$(thing)彩色鋼$()而言，$(thing)藍鋼$()較擅長抵抗$(thing)鈍擊$()傷害，$(thing)紅鋼$()則較擅長抵抗$(thing)穿刺$()傷害。"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "延伸閱讀",
+            "anchor": "relations",
+            "entries": [
+                "tfg:craftsmanship/metallurgy",
+                "tfg:the_world/wild_animals",
+                "tfg:logistics/exploration_gear"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "priority": "true",
+    "sortnum": 1
+}

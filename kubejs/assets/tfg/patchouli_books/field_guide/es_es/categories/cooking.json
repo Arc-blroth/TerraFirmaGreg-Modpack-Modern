@@ -1,0 +1,6 @@
+{
+    "name": "Alimentos y bebidas",
+    "description": "¡Todo sobre cocina, bebidas y conservación de alimentos!",
+    "icon": "tfc:textures/item/food/wheat_bread_sandwich.png",
+    "sortnum": 6
+}

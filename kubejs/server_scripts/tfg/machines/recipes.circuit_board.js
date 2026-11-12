@@ -32,12 +32,19 @@ function registerTFGCircuitBoardsRecipes(event) {
 		.duration(20 * 25)
 		.EUt(GTValues.VA[GTValues.LV])
 
+	event.recipes.gtceu.chemical_bath('tfg:ceramic_circuit_board_t2')
+		.itemInputs(Item.of('tfg:copper_bonded_al2o3_pcb'), Item.of('gtceu:nickel_dust', 1))
+		.inputFluids(Fluid.of('gtceu:sulfuric_acid', 250))
+		.itemOutputs(Item.of('gtceu:plastic_circuit_board', 8))
+		.duration(20 * 15)
+		.EUt(GTValues.VA[GTValues.MV])
+
 	event.recipes.gtceu.chemical_bath('tfg:ceramic_circuit_board_t3')
 		.itemInputs(Item.of('tfg:chromium_bonded_beo_pcb'), Item.of('gtceu:nickel_dust', 1))
 		.inputFluids(Fluid.of('gtceu:sulfuric_acid', 250))
 		.itemOutputs(Item.of('gtceu:plastic_circuit_board', 12))
-		.duration(20 * 25)
-		.EUt(GTValues.VA[GTValues.LV])
+		.duration(20 * 10)
+		.EUt(GTValues.VA[GTValues.HV])
 
 	event.recipes.gtceu.chemical_reactor('tfg:ceramic_printed_circuit_board_iron_iii_chloride')
 		.itemInputs(Item.of('gtceu:plastic_circuit_board'), Item.of('gtceu:annealed_copper_foil', 6))
@@ -66,13 +73,6 @@ function registerTFGCircuitBoardsRecipes(event) {
 		.duration(20 * 5)
 		.EUt(GTValues.VA[GTValues.HV])
 
-	event.recipes.gtceu.chemical_bath('tfg:ceramic_circuit_board_t2')
-		.itemInputs(Item.of('tfg:copper_bonded_al2o3_pcb'), Item.of('gtceu:nickel_dust', 1))
-		.inputFluids(Fluid.of('gtceu:sulfuric_acid', 250))
-		.itemOutputs(Item.of('gtceu:plastic_circuit_board', 8))
-		.duration(20 * 25)
-		.EUt(GTValues.VA[GTValues.LV])
-
 	// Lenses
 
 	event.recipes.gtceu.alloy_smelter('tfg:optical_borosilicate_blank')
@@ -80,7 +80,7 @@ function registerTFGCircuitBoardsRecipes(event) {
 		.notConsumable(Item.of('gtceu:cylinder_casting_mold'))
 		.itemOutputs(Item.of('tfg:optical_borosilicate_blank', 1))
 		.duration(20 * 5)
-		.EUt(GTValues.VA[GTValues.MV])
+		.EUt(GTValues.VA[GTValues.LV])
 
 	function lensPolishing(event, fluid, colour, slurry, temp, energy) {
 		event.recipes.gtceu.high_temperature_precision_fabricator(`tfg:lens_${fluid}_${colour}`)
@@ -96,14 +96,14 @@ function registerTFGCircuitBoardsRecipes(event) {
 		['emerald',      'green',      'dirty',    1530, GTValues.MV],
 		['sapphire',     'blue',       'dirty',    1530, GTValues.MV],
 		['ruby',         'red',        'dirty',    1530, GTValues.MV],
-		['diamond',      'light_blue', 'dirty',    1530, GTValues.MV],
-		['apatite',      'cyan',       'filtered', 1810, GTValues.HV],
-		['spessartine',  'orange',     'filtered', 1810, GTValues.HV],
-		['yellow_garnet','yellow',     'filtered', 1810, GTValues.HV],
-		['olivine',      'lime',       'filtered', 1810, GTValues.HV],
-		['amethyst',     'purple',     'filtered', 1810, GTValues.HV],
-		['grossular',    'brown',      'filtered', 1810, GTValues.HV],
-		['armalcolite',  'gray',       'filtered', 1810, GTValues.HV],
+		['diamond',      'light_blue',	 'dirty',    1530, GTValues.MV],
+		['apatite',      'cyan',       'filtered', 2410, GTValues.HV],
+		['spessartine',  'orange',     'filtered', 2410, GTValues.HV],
+		['yellow_garnet','yellow',     'filtered', 2410, GTValues.HV],
+		['olivine',      'lime',       'filtered', 2410, GTValues.HV],
+		['amethyst',     'purple',     'filtered', 2410, GTValues.HV],
+		['grossular',    'brown',      'filtered', 2410, GTValues.HV],
+		['armalcolite',  'gray',       'filtered', 2410, GTValues.HV],
 		['coal',         'black',      'filtered', 1530, GTValues.MV],
 	];
 

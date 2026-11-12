@@ -54,7 +54,7 @@ function registerTFGPrimitiveItemTags(event) {
 	event.add('tfg:small_wood_dusts', 'gtceu:small_wood_dust')
 
 	// Waxe
-    event.add('forge:wax', 'gtceu:wax_dust');
+    event.add('forge:wax', 'gtceu:wax_ingot');
 	event.add('forge:wax', 'tfg:paraffin_wax')
 	event.add('forge:wax', 'firmalife:beeswax')
 	event.add('forge:wax', 'tfg:conifer_rosin')
@@ -101,6 +101,15 @@ function registerTFGPrimitiveItemTags(event) {
 	event.add('tfg:artisan_table_tools', '#create:sandpaper')
 
 	event.add('tfg:feathers', ['minecraft:feather', 'tfg:wraptor_wool', 'wan_ancient_beasts:glider_feather']);
+
+	event.add('tfg:quartz_gems', [
+		'minecraft:quartz',
+		'gtceu:quartzite_gem',
+		'ae2:certus_quartz_crystal',
+		'ae2:charged_certus_quartz_crystal',
+		'create:rose_quartz',
+		'minecraft:amethyst_shard'
+	])
 }
 
 function registerTFGPrimitiveBlockTags(event) {

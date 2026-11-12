@@ -1,0 +1,28 @@
+{
+    "name": "烘焙麵包",
+    "category": "tfg:cooking",
+    "icon": "tfc:textures/item/food/barley_bread.png",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "製作$(thing)麵包$()首先需要$(thing)酵母$()，第一份要將$(l:cooking/decay#drying)果乾$()密封在裝有$(thing)水$()的大桶中，三天後就會形成$(thing)酵母種$()。$(br)之後只要將酵母種和$(thing)麵粉$()一起密封在大桶中，就能餵養酵母使其繁殖。每 100mB 酵母搭配 1 份麵粉可產出 600mB 酵母，真划算！"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "酵母種、甜味劑和麵粉可組合成$(thing)麵團$()，像一般食物一樣烹煮就能做成$(thing)麵包$()！$(br)烤好後，可用$(thing)刀$()將麵包切成$(thing)切片$()，用來$(l:cooking/sandwiches)製作三明治$()，或烤成$(thing)吐司$()塗上$(thing)果醬$()或調味料。"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "延伸閱讀",
+            "anchor": "relations",
+            "entries": [
+                "tfg:cooking/cooking_methods",
+                "tfg:cooking/decay",
+                "tfg:cooking/sandwiches",
+                "tfg:the_world/wild_crops"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 7
+}

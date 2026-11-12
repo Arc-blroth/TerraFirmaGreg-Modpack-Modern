@@ -12,7 +12,7 @@
   "item.tfchotornot.tong_part.copper": "Element miedzianych szczypiec",
   "item.tfchotornot.tong_part.gold": "Element złotych szczypiec",
   "item.tfchotornot.tong_part.nickel": "Element niklowych szczypiec",
-  "item.tfchotornot.tong_part.pig_iron": "Element szczypiec ze surówki stalowej",
+  "item.tfchotornot.tong_part.pig_iron": "Element szczypiec z surówki hutniczej",
   "item.tfchotornot.tong_part.red_steel": "Element szczypiec z czerwonej stali",
   "item.tfchotornot.tong_part.rose_gold": "Element szczypiec z różowego złota",
   "item.tfchotornot.tong_part.silver": "Element szczypiec ze srebra",
@@ -31,7 +31,7 @@
   "item.tfchotornot.tongs.copper": "Miedziane szczypce",
   "item.tfchotornot.tongs.gold": "Złote szczypce",
   "item.tfchotornot.tongs.nickel": "Niklowe szczypce",
-  "item.tfchotornot.tongs.pig_iron": "Szczypce ze surówki stalowej",
+  "item.tfchotornot.tongs.pig_iron": "Szczypce z surówki hutniczej",
   "item.tfchotornot.tongs.red_steel": "Szczypce z czerwonej stali",
   "item.tfchotornot.tongs.rose_gold": "Szczypce z różowego złota",
   "item.tfchotornot.tongs.silver": "Srebrne szczypce",
@@ -44,8 +44,8 @@
   "item.tfchotornot.wool_potholder": "Wełniana łapka do garnków",
   "message.tfchotornot.item_getting_hot": "Ostrożnie! Twoja druga ręka przegrzewa się!",
   "tfchotornot.creative_tab.tfchotornot": "TFC Hot or Not",
-  "tooltip.tfchotornot.insulating_items": "Noś w drugiej dłoni, by uniknąć negatywnych efektów.",
-  "tooltip.tfchotornot.toocold": "Zbyt zimne, by chwycić!",
-  "tooltip.tfchotornot.toohot": "Zbyt gorący, by chwycić!",
-  "tooltip.tfchotornot.toolight": "Zbyt lekkie, by chwycić!"
+  "tooltip.tfchotornot.insulating_items": "Noś w drugiej ręce, aby uniknąć negatywnych efektów.",
+  "tooltip.tfchotornot.toocold": "Zbyt zimne, aby chwycić!",
+  "tooltip.tfchotornot.toohot": "Zbyt gorący, aby chwycić!",
+  "tooltip.tfchotornot.toolight": "Zbyt lekkie, aby chwycić!"
 }

@@ -1,3 +1,5 @@
+// TODO: Replace interaction events with data driven java events. Should be better for performance.
+
 /**
  * Function for replacing a block with another block by crouch-right-clicking with a tool.
  *
@@ -149,13 +151,24 @@ function transformBlockWithItem(event, inputBlock, outputBlock, itemId, consumeI
 		server.runCommandSilent(`particle ${particleId} ${block.x} ${block.y + 0.8} ${block.z} 0.1 0.1 0.1 0.6 10`)
 	}
 	player.swing()
-	event.server.runCommandSilent(`execute in ${event.block.level.name.getString()} run fill ${block.x} ${block.y} ${block.z} ${block.x} ${block.y} ${block.z} air`)
-	event.server.runCommandSilent(`execute in ${event.block.level.name.getString()} run setblock ${block.x} ${block.y} ${block.z} ${outputBlock}${state}`)
+	const dim = block.level.name.getString();
+	event.server.runCommandSilent(`execute in ${dim} run fill ${block.x} ${block.y} ${block.z} ${block.x} ${block.y} ${block.z} air`)
+	event.server.runCommandSilent(`execute in ${dim} run setblock ${block.x} ${block.y} ${block.z} ${outputBlock}${state}`)
 };
 
 // ================================================
 // Looking to add a recipe to JEI? It's in TFG-Core
 // ================================================
+
+let additionalPlacements = Platform.isLoaded('additionalplacements');
+
+/**
+ * @param {Internal.Block} block Block ID
+ * @returns returned block ID as `additionalplacements:namespace.name`
+ */
+function additionify(block) {
+    return `additionalplacements:${block.toString().replace(/:/, '.')}`;
+}
 
 // Declare Events
 BlockEvents.rightClicked(event => {
@@ -171,6 +184,10 @@ BlockEvents.rightClicked(event => {
 					transformBlockWithTool(event, rock.bricks.stair, rock.bricks.cracked.stair, '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
 					transformBlockWithTool(event, rock.bricks.slab, rock.bricks.cracked.slab, '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
 					transformBlockWithTool(event, rock.bricks.wall, rock.bricks.cracked.wall, '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
+					if (additionalPlacements) {
+						transformBlockWithTool(event, additionify(rock.bricks.stair), additionify(rock.bricks.cracked.stair), '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
+						transformBlockWithTool(event, additionify(rock.bricks.slab), additionify(rock.bricks.cracked.slab), '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
+					}
 				}
 				if (rock.bricks.cracked != null && rock.bricks.mossy != null) {
 					//mossy -> cracked
@@ -178,6 +195,10 @@ BlockEvents.rightClicked(event => {
 					transformBlockWithTool(event, rock.bricks.mossy.stair, rock.bricks.cracked.stair, '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
 					transformBlockWithTool(event, rock.bricks.mossy.slab, rock.bricks.cracked.slab, '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
 					transformBlockWithTool(event, rock.bricks.mossy.wall, rock.bricks.cracked.wall, '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
+					if (additionalPlacements) { 
+						transformBlockWithTool(event, additionify(rock.bricks.mossy.stair), additionify(rock.bricks.cracked.stair), '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
+						transformBlockWithTool(event, additionify(rock.bricks.mossy.slab), additionify(rock.bricks.cracked.slab), '#forge:tools/hammers', true, 'minecraft:block.copper.hit', 'minecraft:crit', true);
+					}
 				}
 			}
 		}
@@ -191,6 +212,10 @@ BlockEvents.rightClicked(event => {
 				transformBlockWithTool(event, rock.bricks.mossy.stair, rock.bricks.stair, '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithTool(event, rock.bricks.mossy.slab, rock.bricks.slab, '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithTool(event, rock.bricks.mossy.wall, rock.bricks.wall, '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+				if (additionalPlacements) { 
+					transformBlockWithTool(event, additionify(rock.bricks.mossy.stair), additionify(rock.bricks.stair), '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+					transformBlockWithTool(event, additionify(rock.bricks.mossy.slab), additionify(rock.bricks.slab), '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);		
+				}
 			}
 			if (rock.cobble != null && rock.cobble.mossy) {
 				//mossy -> cobble
@@ -198,6 +223,10 @@ BlockEvents.rightClicked(event => {
 				transformBlockWithTool(event, rock.cobble.mossy.stair, rock.cobble.stair, '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithTool(event, rock.cobble.mossy.slab, rock.cobble.slab, '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithTool(event, rock.cobble.mossy.wall, rock.cobble.wall, '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+				if (additionalPlacements) { 
+					transformBlockWithTool(event, additionify(rock.cobble.mossy.stair), additionify(rock.cobble.stair), '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+					transformBlockWithTool(event, additionify(rock.cobble.mossy.slab), additionify(rock.cobble.slab), '#forge:tools/knives', true, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);	
+				}
 			}
 		}
 	}
@@ -210,6 +239,10 @@ BlockEvents.rightClicked(event => {
 				transformBlockWithItem(event, rock.bricks.cracked.stair, rock.bricks.stair, 'tfc:mortar', true, 1, 'minecraft:item.ink_sac.use', 'minecraft:effect', true);
 				transformBlockWithItem(event, rock.bricks.cracked.slab, rock.bricks.slab, 'tfc:mortar', true, 1, 'minecraft:item.ink_sac.use', 'minecraft:effect', true);
 				transformBlockWithItem(event, rock.bricks.cracked.wall, rock.bricks.wall, 'tfc:mortar', true, 1, 'minecraft:item.ink_sac.use', 'minecraft:effect', true);
+				if (additionalPlacements) { 
+					transformBlockWithItem(event, additionify(rock.bricks.cracked.stair), additionify(rock.bricks.stair), 'tfc:mortar', true, 1, 'minecraft:item.ink_sac.use', 'minecraft:effect', true);
+					transformBlockWithItem(event, additionify(rock.bricks.cracked.slab), additionify(rock.bricks.slab), 'tfc:mortar', true, 1, 'minecraft:item.ink_sac.use', 'minecraft:effect', true);
+				}
 			}
 		}
 	}
@@ -222,6 +255,10 @@ BlockEvents.rightClicked(event => {
 				transformBlockWithItem(event, rock.bricks.mossy.stair, rock.bricks.stair, 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithItem(event, rock.bricks.mossy.slab, rock.bricks.slab, 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithItem(event, rock.bricks.mossy.wall, rock.bricks.wall, 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+				if (additionalPlacements) {
+					transformBlockWithItem(event, additionify(rock.bricks.mossy.stair), additionify(rock.bricks.stair), 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+					transformBlockWithItem(event, additionify(rock.bricks.mossy.slab), additionify(rock.bricks.slab), 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+				}
 			}
 			if (rock.cobble != null && rock.cobble.mossy) {
 				//mossy -> cobble
@@ -229,6 +266,10 @@ BlockEvents.rightClicked(event => {
 				transformBlockWithItem(event, rock.cobble.mossy.stair, rock.cobble.stair, 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithItem(event, rock.cobble.mossy.slab, rock.cobble.slab, 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
 				transformBlockWithItem(event, rock.cobble.mossy.wall, rock.cobble.wall, 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+				if (additionalPlacements) { 
+					transformBlockWithItem(event, additionify(rock.cobble.mossy.stair), additionify(rock.cobble.stair), 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+					transformBlockWithItem(event, additionify(rock.cobble.mossy.slab), additionify(rock.cobble.slab), 'tfc:groundcover/pumice', true, 1, 'minecraft:item.axe.wax_off', 'minecraft:item_slime', true);
+				}
 			}
 		}
 	}
@@ -242,6 +283,10 @@ BlockEvents.rightClicked(event => {
 					transformBlockWithItem(event, rock.bricks.stair, rock.bricks.mossy.stair, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
 					transformBlockWithItem(event, rock.bricks.slab, rock.bricks.mossy.slab, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
 					transformBlockWithItem(event, rock.bricks.wall, rock.bricks.mossy.wall, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+					if (additionalPlacements) { 
+						transformBlockWithItem(event, additionify(rock.bricks.stair), additionify(rock.bricks.mossy.stair), '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+						transformBlockWithItem(event, additionify(rock.bricks.slab), additionify(rock.bricks.mossy.slab), '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+					}
 				}
 				if (rock.bricks.cracked != null && rock.bricks.mossy != null) {
 					//cracked -> mossy
@@ -249,6 +294,10 @@ BlockEvents.rightClicked(event => {
 					transformBlockWithItem(event, rock.bricks.cracked.stair, rock.bricks.mossy.stair, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
 					transformBlockWithItem(event, rock.bricks.cracked.slab, rock.bricks.mossy.slab, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
 					transformBlockWithItem(event, rock.bricks.cracked.wall, rock.bricks.mossy.wall, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+					if (additionalPlacements) { 
+						transformBlockWithItem(event, additionify(rock.bricks.cracked.stair), additionify(rock.bricks.mossy.stair), '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+						transformBlockWithItem(event, additionify(rock.bricks.cracked.slab), additionify(rock.bricks.mossy.slab), '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+					}
 				}
 			}
 			if (rock.cobble != null && rock.cobble.mossy) {
@@ -257,6 +306,10 @@ BlockEvents.rightClicked(event => {
 				transformBlockWithItem(event, rock.cobble.stair, rock.cobble.mossy.stair, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
 				transformBlockWithItem(event, rock.cobble.slab, rock.cobble.mossy.slab, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
 				transformBlockWithItem(event, rock.cobble.wall, rock.cobble.mossy.wall, '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+				if (additionalPlacements) { 
+					transformBlockWithItem(event, additionify(rock.cobble.stair), additionify(rock.cobble.mossy.stair), '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+					transformBlockWithItem(event, additionify(rock.cobble.slab), additionify(rock.cobble.mossy.slab), '#tfc:compost_greens_low', true, 1, 'minecraft:block.moss.hit', 'minecraft:item_slime', true);
+				}
 			}
 		}
 	}

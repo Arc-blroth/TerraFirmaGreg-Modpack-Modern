@@ -1,4 +1,4 @@
-// priority: 0
+﻿// priority: 0
 "use strict";
 
 /** @param {Internal.TFCDataEventJS} event */
@@ -53,6 +53,16 @@ function registerTFGHeatData(event) {
 	event.itemHeat('betterend:charnia_light_blue', 0.25, null, null)
 	event.itemHeat('betterend:charnia_purple', 0.25, null, null)
 	event.itemHeat('betterend:charnia_red', 0.25, null, null)
+	
+	event.itemHeat('#tfc:candles', 0.25, null, null)
+	event.itemHeat('firmalife:beeswax', 0.25, null, null)
+	event.itemHeat('tfg:conifer_rosin', 0.25, null, null)
+	event.itemHeat('tfg:paraffin_wax', 0.25, null, null)
+	event.itemHeat('gtceu:wax_dust', 0.25, null, null)
+	event.itemHeat('gtceu:small_wax_dust', 0.25, null, null)
+	event.itemHeat('gtceu:tiny_wax_dust', 0.25, null, null)
+	event.itemHeat('gtceu:wax_ingot', 0.25, null, null)
+	event.itemHeat('gtceu:wax_nugget', 0.25, null, null)
 }
 
 //#endregion
@@ -102,6 +112,9 @@ function registerTFGItemSize(event) {
 	event.itemSize("tfg:aluminium_harvest_basket", "large", "medium", "aluminium_harvest_basket");
 
 	event.itemSize(Ingredient.of("#minecraft:buttons"), "very_small", "very_light", "buttons");
+    event.itemSize(Ingredient.of("#minecraft:signs"), "very_small", "medium", "signs");
+    event.itemSize(Ingredient.of("#minecraft:hanging_signs"), "very_small", "medium", "hanging_signs");
+    event.itemSize(Ingredient.of("#minecraft:doors"), "very_large", "medium", "doors");
 	event.itemSize(Ingredient.of("#forge:buzz_saw_heads"), "large", "heavy", "buzz_saw_blades");
 	event.itemSize(
 		Ingredient.of("#minecraft:wool_carpets").or("#domum_ornamentum:floating_carpet"),
@@ -360,6 +373,12 @@ function registerTFGItemSize(event) {
 	global.TFC_WOOD_TYPES.forEach(wood => { 
 		event.itemSize(`tfg:wood/crafting_station/${wood.name}`, "large", "heavy", `${wood.name}_crafting_station`);
 	})
+
+	event.itemSize('tfc:anemometer', "normal", "medium", "tfc_anemometer");
+	event.itemSize('tfc:calendar_clock', "normal", "medium", "tfc_calendar_clock");
+	event.itemSize('tfc:thermometer', "small", "light", "tfc_thermometer");
+	event.itemSize('tfc:vane', "normal", "medium", "tfc_vane");
+	event.itemSize('create:minecart_contraption', "huge", "very_heavy", "minecart_contraption");
 }
 
 //#endregion

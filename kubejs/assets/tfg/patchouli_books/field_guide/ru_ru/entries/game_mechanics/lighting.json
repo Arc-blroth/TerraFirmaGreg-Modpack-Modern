@@ -1,0 +1,172 @@
+{
+    "name": "Источники света",
+    "category": "tfg:game_mechanics",
+    "sortnum": 6,
+    "icon": "tfc:candle",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(li)$(bold)$(l:game_mechanics/lighting#torches)Факела$()$(li)$(bold)$(l:game_mechanics/lighting#candles)Свечи$()$(li)$(bold)$(l:game_mechanics/lighting#jack_o_lanterns)Светильники Джека$()$(li)$(bold)$(l:game_mechanics/lighting#lamps)Фонари$()$(li)$(bold)$(l:game_mechanics/lighting#portable_light)Переносной свет$()$(li)$(bold)$(l:game_mechanics/lighting#permanent_light)Вечный свет$()",
+            "title": "Каталог",
+            "anchor": "index"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "intro",
+            "title": "Введение",
+            "text": "В $(tfg_short) много способов освещения. Однако, почти все источники света рано или поздно гаснут!$(br)В отличие от ванильного Майнкрафта, здесь тебе придётся следить за своими источниками света и заново зажигать их когда они потухнут. Чем выше качество источника, тем дольше он горит.$(br)Вечные источники света не будут доступны довольно долго, если только ты не проявишь смекалку."
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "torches",
+            "title": "Факела",
+            "item": "tfc:torch,tfc:dead_torch",
+            "text": "Факела можно сделать нагрев палки или связки палок на $(l:craftsmanship/firepit)Костре$() или другими способами.$(br)Факела горят 3 дня, после чего $(thing)Гаснут$(). Их можно снова зажечь кликнув по ним факелом, или использовав огниво. По горящим факелам также можно кликать палками, чтобы поджечь их. Выброшенные в воду факела превращаются в $(thing)Древесную золу$() или $(thing)Палки$()."
+        },
+        {
+            "type": "tfg:multimultiblock",
+            "multiblocks": [
+                {
+                    "pattern": [
+                        [
+                            "X"
+                        ],
+                        [
+                            "0"
+                        ]
+                    ],
+                    "mapping": {
+                        "X": "tfc:torch"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "X"
+                        ],
+                        [
+                            "0"
+                        ]
+                    ],
+                    "mapping": {
+                        "X": "tfc:dead_torch"
+                    }
+                }
+            ],
+            "name": "",
+            "text": "Факела можно бросать на поленницы или $(l:craftsmanship/pit_kiln)Земляные печи$() чтобы зажечь их.",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "candles",
+            "title": "Свечи",
+            "item": "tag:tfc:candles",
+            "text": "Свечи делаются из $(thing)Воска$() или $(thing)Жира$() и горят 30 дней прежде чем потухнуть.$(br)Свечи можно ставить и зажигать на земле или в $(l:cooking/jam#jarbnet)Стеллажах для банок$(). Количество размещённых свечей влияет на количество излучаемого света."
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "X"
+                    ],
+                    [
+                        "0"
+                    ]
+                ],
+                "mapping": {
+                    "X": "#tfc:candles[candles=1,lit=true]"
+                }
+            },
+            "text": "Свечи могут быть $(thing)окрашены$() во все 16 цветов!",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "jack_o_lanterns",
+            "title": "Светильники Джека",
+            "item": "tag:tfg:carved_pumpkins,tag:tfg:carved_pumpkins/lit",
+            "text": "Светильники Джека это зажжённые версии $(thing)Вырезанных тыкв$(), горящие 4.5 дня прежде чем снова стать вырезанной тыквой.$(br)Тыкву можно вырезать держа её в руке и начав $(l:craftsmanship/sticks_and_stones)Обработку$()."
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "X"
+                    ],
+                    [
+                        "0"
+                    ]
+                ],
+                "mapping": {
+                    "X": "#tfg:carved_pumpkins/lit"
+                }
+            },
+            "name": "",
+            "text": "На выбор есть куча классных дизайнов светильников Джека!",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "lamps",
+            "title": "Фонари",
+            "item": "tag:tfc:lamps",
+            "text": "Фонари это долгосрочный источник света, сжигающий топливо. Фонари сохраняют залитое топливо, если их сломать. Ты можешь автоматически заправлять фонари $(thing)Трубами$() или вручную $(l:cooking/drinking_containers)Контейнерами для жидкостей$().$(br)Ты можешь узнать о подходящем топливе в $(emi), просматривая фонарь. $(thing)Лава$() горит вечно, но должна быть в $(item)Фонаре из синей стали$(). $(thing)Жидкий светокамень$() тоже, но работает в любом фонаре."
+        },
+        {
+            "type": "patchouli:multiblock",
+            "multiblock": {
+                "pattern": [
+                    [
+                        "Y"
+                    ],
+                    [
+                        "0"
+                    ]
+                ],
+                "mapping": {
+                    "Y": "#tfc:lamps[hanging=true,lit=true]"
+                }
+            },
+            "text": "Фонари могут свисать с блоков. $(thing)Цепи$() и $(thing)Трубы$() прекрасно для этого подходят.",
+            "enable_visualize": false
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "portable_light",
+            "title": "Переносной свет",
+            "text": "Ты также можешь носить светильники в руке, чтобы освещать окружение, например $(item)Факел$() во $(thing)второй руке$().$(br2)Если хочешь её освободить, $(l:game_mechanics/lighting#lamps)фонари$() можно носить в слоте $(thing)\"Спина\"$() из $(l:craftsmanship/clothing#curios)Curios$(), а $(l:logistics/exploration_gear#digger_helmet)Шахтёрские каски$() это шлемы, дающие свет."
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "permanent_light",
+            "title": "Вечный свет",
+            "item": "minecraft:glowstone",
+            "text": "Создав $(item)Экстрактор$() и $(item)Жидкостный отвердитель$() ты сможешь начать производить множество декоративных вечных источников света из $(thing)Жидкого светокамня$() и $(thing)Блоков светокамня$().$(br)Помимо развития технологий, есть ещё несколько креативных способов освещения, например $(l:agriculture/aqueducts)Лавовые акведуки$()."
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "Читать далее",
+            "anchor": "relations",
+            "entries": [
+                "tfg:craftsmanship/sticks_and_stones",
+                "tfg:craftsmanship/barrels",
+                "tfg:craftsmanship/firepit",
+                "tfg:craftsmanship/building_materials",
+                "tfg:cooking/jam",
+                "tfg:agriculture/aqueducts",
+                "tfg:logistics/exploration_gear"
+            ]
+        }
+    ],
+    "read_by_default": true,
+    "extra_recipe_mappings": {
+        "tag:tfc:candles": 4,
+        "tag:tfg:carved_pumpkins": 6,
+        "tag:tfg:carved_pumpkins/lit": 6,
+        "tag:tfc:lamps": 8,
+        "minecraft:glowstone": 10
+    }
+}

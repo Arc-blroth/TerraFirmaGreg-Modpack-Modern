@@ -1,0 +1,363 @@
+{
+    "name": "挖礦與坍塌",
+    "icon": "tfc:textures/item/metal/pickaxe/wrought_iron.png",
+    "category": "tfg:game_mechanics",
+    "priority": true,
+    "sortnum": 2,
+    "read_by_default": true,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "anchor": "index",
+            "text": "$(li)$(bold)$(l:game_mechanics/mining#tools)工具$()$(li)$(bold)$(l:game_mechanics/mining#collapses)坍塌$()$(li2)$(l:game_mechanics/mining#gravity)重力$()$(li)$(bold)$(l:game_mechanics/mining#supports)支撐梁$()$(li2)$(l:game_mechanics/mining#higher_tiers)高等級支撐梁$()$(li)$(bold)$(l:game_mechanics/mining#explosives)炸藥$()$(li)$(bold)$(l:game_mechanics/mining#processing)礦石加工$()"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "intro",
+            "title": "簡介",
+            "text": "$(l:craftsmanship/metallurgy)找到$()礦脈後，就可以開始開採資源了。但挖礦時有一些與原版 Minecraft 不同的地方需要注意，例如$(l:game_mechanics/mining#collapses)坍塌$()、$(l:game_mechanics/mining#supports)支撐梁$()、$(l:game_mechanics/hazards)危險物質$()和$(l:game_mechanics/mining#processing)加工$()。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "anchor": "tools",
+            "title": "工具",
+            "item": "tag:tfc:pickaxes,tag:forge:tools/mining_hammers",
+            "text": "開始前，應準備好合適的裝備。開採礦石需要$(thing)鎬$()或$(thing)採礦錘$()，採礦錘的優點是一次可破壞 3x3 範圍的方塊。$(br2)一般的$(thing)錘子$()也能破壞石頭類方塊，但不會掉落礦石，不過在$(l:craftsmanship/anvils#raw_rock)取出$()原石時仍很有用。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "collapses",
+            "text": "在$(tfg)中，原石並不穩定，容易$(thing)坍塌$()。在特定情況下，$(thing)原石$()、$(thing)礦石$()和$(thing)石錐$()等許多岩石方塊都可能砸到你頭上。$(br2)$(thing)支撐梁$()可以防止坍塌。$(br)$(thing)礦石$()方塊坍塌時會降級成鵝卵石。",
+            "title": "坍塌"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "玩家$(thing)開採任何原石$()時，若附近有$(thing)未受支撐的原石$()，就可能發生坍塌。坍塌一旦開始，即使原本$(thing)受到支撐的$()岩石也可能坍塌。$(br2)洞穴頂部的岩石是$(thing)自然受支撐$()的；下方有不會坍塌的實心方塊的原石也算$(thing)受到支撐$()。$(thing)支撐梁$()則可一次支撐一大片區域。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "gravity",
+            "title": "重力",
+            "text": "泥土、草地、黏土、礫石、鵝卵石和沙子也會受重力影響。與原版重力方塊不同的是，這些方塊會沿斜坡滑落，周圍沒有支撐方塊時無法堆疊超過一格高。$(l:craftsmanship/panning)礦床$()也會滑落，但品質不會降低。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tag:tfc:support_beams",
+            "anchor": "supports",
+            "title": "支撐梁",
+            "text": "$(thing)支撐梁$()可以用原木或石頭合成。$(br2)在方塊上放置$(thing)支撐梁$()，會立起一根最高三格的柱子，柱子下方必須有實心方塊才能保持直立。$(br)如上圖所示，五格以內的兩根$(thing)垂直$()梁之間可以放置$(thing)水平$()梁連接。"
+        },
+        {
+            "type": "tfg:multimultiblock",
+            "text": "$(bold)提示$()：木製垂直支撐梁可以搭配更高品質的水平支撐梁(例如混凝土)。",
+            "multiblocks": [
+                {
+                    "pattern": [
+                        [
+                            "   ",
+                            "CRD",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "GGG",
+                            "G0G",
+                            "GGG"
+                        ],
+                        [
+                            "   ",
+                            "   ",
+                            "   "
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:rock/raw/andesite",
+                        "R": "air",
+                        "C": "air",
+                        "D": "air",
+                        "V": "air",
+                        "W": "air",
+                        "G": "tfc:rock/raw/andesite"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "   ",
+                            "CRD",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "GGG",
+                            "G0G",
+                            "GGG"
+                        ],
+                        [
+                            "   ",
+                            "   ",
+                            "   "
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:rock/raw/andesite",
+                        "R": "air",
+                        "C": "tfc:wood/vertical_support/oak",
+                        "D": "air",
+                        "V": "tfc:wood/vertical_support/oak",
+                        "W": "air",
+                        "G": "tfc:rock/raw/andesite"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "   ",
+                            "CRD",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "GGG",
+                            "G0G",
+                            "GGG"
+                        ],
+                        [
+                            "   ",
+                            "   ",
+                            "   "
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:rock/raw/andesite",
+                        "R": "air",
+                        "C": "tfc:wood/vertical_support/oak",
+                        "D": "tfc:wood/vertical_support/oak",
+                        "V": "tfc:wood/vertical_support/oak",
+                        "W": "tfc:wood/vertical_support/oak",
+                        "G": "tfc:rock/raw/andesite"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "   ",
+                            "CRD",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "GGG",
+                            "G0G",
+                            "GGG"
+                        ],
+                        [
+                            "   ",
+                            "   ",
+                            "   "
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:rock/raw/andesite",
+                        "R": "tfc:wood/horizontal_support/oak[north=true,south=true]",
+                        "C": "tfc:wood/vertical_support/oak[south=true]",
+                        "D": "tfc:wood/vertical_support/oak[north=true]",
+                        "V": "tfc:wood/vertical_support/oak",
+                        "W": "tfc:wood/vertical_support/oak",
+                        "G": "tfc:rock/raw/andesite"
+                    }
+                },
+                {
+                    "pattern": [
+                        [
+                            "   ",
+                            "CRD",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "   ",
+                            "V W",
+                            "   "
+                        ],
+                        [
+                            "GGG",
+                            "G0G",
+                            "GGG"
+                        ],
+                        [
+                            "   ",
+                            "   ",
+                            "   "
+                        ]
+                    ],
+                    "mapping": {
+                        "0": "tfc:rock/raw/andesite",
+                        "R": "tfc:wood/horizontal_support/oak[north=true,south=true]",
+                        "C": "tfc:wood/vertical_support/oak[south=true]",
+                        "D": "tfc:wood/vertical_support/oak[north=true]",
+                        "V": "tfc:wood/vertical_support/oak",
+                        "W": "tfc:wood/vertical_support/oak",
+                        "G": "tfc:rock/raw/andesite"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "patchouli:text",
+            "text": "只有$(thing)$(bold)水平支撐梁$()會讓附近方塊受到$(thing)支撐$()：以水平支撐梁為中心、$(bold)9 x 5 x 9$()範圍內的方塊都算受到$(thing)支撐$()。$(br2)除了支撐梁，岩石只要下方有實心方塊(例如更多岩石)也能獲得支撐。注意，$(thing)階梯$()和$(thing)半磚$()等$(thing)非實心方塊$()以及$(thing)平滑石頭$()都$(bold)不$()算作支撐。"
+        },
+        {
+            "type": "patchouli:image",
+            "title": "支撐範圍",
+            "anchor": "support_3d",
+            "width": 1024,
+            "texture_width": 1024,
+            "height": 1024,
+            "texture_height": 1024,
+            "images": [
+                "tfg:textures/gui/field_guide/supports/support_3d.png"
+            ],
+            "text": "支撐的保護範圍以水平支撐梁為中心。垂直支撐梁沒有影響。",
+            "border": false
+        },
+        {
+            "type": "patchouli:image",
+            "title": "方塊範圍",
+            "anchor": "block_range",
+            "width": 1024,
+            "texture_width": 1024,
+            "height": 1024,
+            "texture_height": 1024,
+            "images": [
+                "tfg:textures/gui/field_guide/supports/support_2d.png"
+            ],
+            "text": "挖掘時，每個方塊都有各自觸發坍塌的檢查範圍，最大 7x7x7，即圖中以石頭為中心的紅色/黃色區域。",
+            "border": true
+        },
+        {
+            "type": "patchouli:image",
+            "title": "通過條件",
+            "anchor": "pass_condition",
+            "width": 1024,
+            "texture_width": 1024,
+            "height": 1024,
+            "texture_height": 1024,
+            "images": [
+                "tfg:textures/gui/field_guide/supports/support_2d_pass.png"
+            ],
+            "text": "挖掘標示的方塊時不會發生坍塌，因為所有的空間(黃色區域)都受到支撐(綠色區域)的保護。",
+            "border": true
+        },
+        {
+            "type": "patchouli:image",
+            "title": "失敗條件",
+            "anchor": "fail_condition",
+            "width": 1024,
+            "texture_width": 1024,
+            "height": 1024,
+            "texture_height": 1024,
+            "images": [
+                "tfg:textures/gui/field_guide/supports/support_2d_fail.png"
+            ],
+            "text": "但若支撐範圍外有未受支撐的方塊，即使標示的方塊本身受到支撐，挖掘它仍可能引發坍塌。",
+            "border": true
+        },
+        {
+            "type": "patchouli:text",
+            "text": "除了基本的$(thing)木製和石製支撐梁$()之外，$(tfg_short)還新增了更高等級的支撐梁，包括$(thing)混凝土支撐梁$()、$(thing)鋼支撐梁$()和$(thing)鋼筋混凝土支撐梁$()。最高等級的支撐梁能支撐以水平支撐梁為中心的$(bold)33 x 13 x 33$()格範圍！$(br)支撐範圍可以在支撐梁的提示框中查看。",
+            "title": "更高等級",
+            "anchor": "higher_tiers"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "support_tips",
+            "text": "最後要注意，對可能引發附近坍塌的$(thing)原石$()進行$(l:craftsmanship/chisel)鑿刻$()，和挖掘一樣容易引發坍塌。$(br2)如果仍然被坍塌困擾，可以看看這部$(l:https://youtu.be/1KgwEexxGNI)指南$()。",
+            "title": "技巧"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "title": "炸藥",
+            "anchor": "explosives",
+            "item": "tfc:powderkeg,minecraft:tnt,gtceu:powderbarrel,gtceu:dynamite",
+            "text": "$(tfg_short)中有多種用途各異的炸藥。$(li)$(bold)TNT$()：中型炸藥。$(li)$(bold)炸藥棒$()：可投擲的低威力炸藥。$(li)$(bold)火藥木桶$()：大型炸藥。$(li)$(bold)火藥桶$()：全威力時極為強大的炸藥。威力隨儲存的火藥數量而增加。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "title": "基本礦石加工",
+            "anchor": "processing",
+            "item": "tag:forge:crushed_ores",
+            "text": "礦石一定要加工，產量才會更高，而且很早就能開始。$(br)第一步是用$(l:craftsmanship/quern)手推磨$()粉碎原礦，之後可以用$(thing)石磨$()、$(thing)粉碎輪$()、$(thing)研磨機$()和$(thing)鍛造錘$()等更好的機器自動化。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "title": "淨化礦粉",
+            "anchor": "purifying",
+            "item": "tag:forge:pure_dusts",
+            "text": "想讓粉碎的礦石熔出更多 mB，先將它和$(thing)錘子$()一起放入合成格，製成$(thing)含雜質的礦粉$()，再丟進水裡或裝滿水的大桶淨化。$(br)最終的礦粉熔化時，可產出約原礦$(bold)4 倍$()的金屬。"
+        },
+        {
+            "type": "patchouli:relations",
+            "title": "延伸閱讀",
+            "anchor": "relations",
+            "entries": [
+                "tfg:the_world/geology",
+                "tfg:craftsmanship/metallurgy",
+                "tfg:craftsmanship/barrels",
+                "tfg:craftsmanship/anvils",
+                "tfg:craftsmanship/quern",
+                "tfg:craftsmanship/panning"
+            ]
+        }
+    ],
+    "extra_recipe_mappings": {
+        "tag:minecraft:pickaxes": 2,
+        "tag:forge:tools/mining_hammers": 2,
+        "tag:forge:tools/drills": 2,
+        "tag:tfc:support_beams": 6,
+        "tfc:powderkeg": 15,
+        "minecraft:tnt": 15,
+        "gtceu:powderbarrel": 15,
+        "gtceu:dynamite": 15
+    }
+}

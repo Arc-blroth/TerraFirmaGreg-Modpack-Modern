@@ -1,0 +1,36 @@
+{
+    "name": "ボウル",
+    "category": "tfg:cooking",
+    "icon": "tfc:ceramic/bowl",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(thing)ボウル$()は、多目的なツールであり、$(l:cooking/salad)サラダ$()や$(l:cooking/cooking_methods#pot)スープ$()の作成、$(l:cooking/decay#salting)肉の塩漬け$()、または$(thing)粉末$()を$(l:craftsmanship/glassworking#coloring)ガラス$()に適用して、ガラスの色を変更するために使用できます。$(br2)ボウルは、粘土を加工してボウルを作り、それを焼成することで$(thing)セラミック$()製のものを作ることができるほか、 木からも作れます。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(item)サラダ$() を作るには、ボウルを手に持ち、空中で $(item)$(k:key.sneak) + $(k:key.use)$() を押してインターフェースを開きます。$(br2)ボウルはブロックと同じように地面に設置することもできます。設置すると、$(l:craftsmanship/quern)石臼$()で鉱石、鉱物、宝石を粉砕して得られたあらゆる種類の$(thing)粉$()を入れることができます。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tag:tfc:powders",
+            "anchor": "powder_bowl",
+            "title": "粉",
+            "link_recipes": false,
+            "text": "粉末入りのボウルは、指定された粉末を最大16個まで保持できます。粉末を入れるには、粉末を持ちながら$(item)$(k:key.use)$()を押します。アイテムを取り出すには、空の手で$(item)$(k:key.use)$()を押します。$(br2)$(item)$(k:key.sneak)$()を押すと、ボウルの中身を全て取り出せます。"
+        },
+        {
+            "type": "patchouli:spotlight",
+            "item": "tfc:powder/salt",
+            "link_recipes": false,
+            "text": "ボウルに塩がある場合、生肉をクリックすると肉を塩を付けできます。これはインベントリ内の塩で肉をクラフトするのと同じです。"
+        }
+    ],
+    "read_by_default": true,
+    "sortnum": 12,
+    "extra_recipe_mappings": {
+        "tfc:ceramic/unfired_bowl": 1,
+        "tfc:ceramic/bowl": 1,
+        "minecraft:bowl": 1
+    }
+}
